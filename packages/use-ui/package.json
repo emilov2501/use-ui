@@ -28,22 +28,28 @@
   },
   "scripts": {
     "build": "rimraf dist && node ./esbuild.mjs && tsc",
-    "test": "node ./__tests__/use-ui.test.js"
+    "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/emilov2501/use-ui/issues"
   },
   "homepage": "https://github.com/emilov2501/use-ui#readme",
   "devDependencies": {
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/jest": "^29.5.12",
     "@types/lodash.debounce": "^4.0.9",
     "@types/lodash.get": "^4.4.9",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "classnames": "^2.5.1",
     "esbuild": "^0.20.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3"
   },
