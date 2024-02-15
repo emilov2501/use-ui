@@ -6,22 +6,22 @@ import * as React from "react";
 /* Функция useButton — это специальный хук React, который возвращает массив, содержащий два
 элемента. Первый элемент — это объект, содержащий реквизиты, которые следует передать
 компоненту кнопки. Второй элемент — это объект, содержащий метаданные о компоненте кнопки. */
-const useButton = <TVariants,>({
-  disabled = undefined,
-  href,
-  role = "button",
-  type = "button",
-  form,
-  tabIndex,
-  tagName,
-  prefix,
-  variant,
-  className: _className = "",
-  onClick,
-}: UseButton.ButtonPropsOptions<TVariants>): [
-  UseButton.ButtonProps,
-  UseButton.ButtonPropsMetadata
-] => {
+const useButton = <TVariants,>(
+  props?: UseButton.ButtonPropsOptions<TVariants>
+): [UseButton.ButtonProps, UseButton.ButtonPropsMetadata] => {
+  let {
+    disabled = undefined,
+    href,
+    role = "button",
+    type = "button",
+    form,
+    tabIndex,
+    tagName,
+    prefix,
+    variant,
+    className: _className = "",
+    onClick,
+  } = props || {};
   /**
    * Функция handleClick обрабатывает события щелчка и клавиатуры, предотвращая поведение по умолчанию
    * и останавливая распространение, если элемент отключен.

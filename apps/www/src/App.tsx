@@ -2,16 +2,9 @@ import { useButton, useField } from "useui-ts";
 import "./App.css";
 
 function App() {
-  const [{ debouncedValue, ...fieldProps }, { Field }] = useField({
-    debounceDelay: 500,
-    value: "lox",
-    onChange: (e) => console.log(e),
-  });
+  const [{ debouncedValue, ...fieldProps }, { Field }] = useField();
 
-  const [btnProps, { Button }] = useButton({
-    className: "lox",
-    variant: "default",
-  });
+  const [btnProps, { Button }] = useButton();
 
   return (
     <>
