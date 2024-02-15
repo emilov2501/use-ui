@@ -4,6 +4,11 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "release": "lerna publish",
+    "version": "lerna version",
+    "build:use-ui": "lerna run build --scope=use-ui"
+  },
   "devDependencies": {
     "lerna": "^8.1.2",
     "lerna-changelog": "^2.2.0"
