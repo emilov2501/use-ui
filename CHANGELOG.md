@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/emilov2501/use-ui/compare/v0.1.9...v0.2.0) (2024-02-15)
+
+
+### Features
+
+* **module:** add helpers module ([fda37ed](https://github.com/emilov2501/use-ui/commit/fda37ede44292dcdd66cd792703cfa42a4a21424))
+* **useModal:** :art: implement useModal feature ([43211f4](https://github.com/emilov2501/use-ui/commit/43211f45f01d4a8cb30b2f716a76b891e8819b0a))
+
+
+
+
+
 ## [0.1.9](https://github.com/emilov2501/use-ui/compare/v0.1.8...v0.1.9) (2024-02-15)
 
 
