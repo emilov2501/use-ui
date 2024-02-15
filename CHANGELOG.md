@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.9](https://github.com/emilov2501/use-ui/compare/v0.1.8...v0.1.9) (2024-02-15)
+
+
+### Bug Fixes
+
+* **module:** remove package lock ([45ff8a2](https://github.com/emilov2501/use-ui/commit/45ff8a273cc19c30f658e367f0aa3c610e642102))
+
+
+
+
+
 ## [0.1.8](https://github.com/emilov2501/use-ui/compare/v0.1.6...v0.1.8) (2024-02-15)
 
 
