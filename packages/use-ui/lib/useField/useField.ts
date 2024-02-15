@@ -5,17 +5,17 @@ import { UseField } from "./useField.types";
 /* Функция useField — это специальный хук в TypeScript, который используется для создания
 контролируемого поля ввода. В качестве параметров он принимает различные параметры, такие как
 начальное значение, имя, обратный вызов onChange и задержку устранения дребезга. */
-const useField = ({
-  value = "",
-  name,
-  debounceDelay = 0,
-  onChange,
-  disabled,
-  ...props
-}: UseField.FieldPropsOptions): [
-  UseField.FieldProps,
-  UseField.FieldPropsMetadata
-] => {
+const useField = (
+  props?: UseField.FieldPropsOptions
+): [UseField.FieldProps, UseField.FieldPropsMetadata] => {
+  const {
+    value = "",
+    name = undefined,
+    debounceDelay = 0,
+    onChange,
+    disabled,
+  } = props || {};
+
   const [_value, _setValue] = useState<string>(() => value);
   const [_debouncedValue, _setDebouncedValue] = useState<string>(() => value);
 

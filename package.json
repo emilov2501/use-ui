@@ -5,8 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "release": "lerna publish",
-    "version": "lerna version",
+    "release": "lerna publish from-package --no-private",
+    "version": "lerna version --no-private",
     "build:use-ui": "lerna run build --scope=useui-ts",
     "dev:www": "lerna run dev --scope=www"
   },
