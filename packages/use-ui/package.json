@@ -27,7 +27,7 @@
     "url": "git+https://github.com/emilov2501/use-ui.git"
   },
   "scripts": {
-    "build": "rimraf dist && rollup -c",
+    "build": "rimraf dist && node ./esbuild.mjs && tsc",
     "test": "node ./__tests__/use-ui.test.js"
   },
   "bugs": {
@@ -35,24 +35,15 @@
   },
   "homepage": "https://github.com/emilov2501/use-ui#readme",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^11.1.6",
     "@types/lodash.debounce": "^4.0.9",
     "@types/lodash.get": "^4.4.9",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
-    "autoprefixer": "^10.4.17",
     "classnames": "^2.5.1",
-    "cssnano": "^6.0.3",
+    "esbuild": "^0.20.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.5",
-    "rollup": "^4.10.0",
-    "rollup-plugin-dts": "^6.1.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3"
   },

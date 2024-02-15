@@ -8,7 +8,7 @@
     "skipLibCheck": true,
     "jsx": "react",
     "declaration": true,
-    "declarationDir": "types",
+    "declarationDir": "dist",
     "emitDeclarationOnly": true,
     "sourceMap": true,
     "outDir": "dist",
