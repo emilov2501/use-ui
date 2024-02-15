@@ -1,6 +1,6 @@
 {
   "name": "useui-ts",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "description": "",
   "keywords": [
@@ -40,9 +40,9 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/lodash.debounce": "^4.0.9",
+    "@types/lodash.get": "^4.4.9",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
-    "@types/lodash.get": "^4.4.9",
     "autoprefixer": "^10.4.17",
     "classnames": "^2.5.1",
     "cssnano": "^6.0.3",
@@ -57,9 +57,9 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "usehooks-ts": "^2.14.0",
     "lodash.debounce": "^4.0.8",
-    "lodash.get": "^4.4.2"
+    "lodash.get": "^4.4.2",
+    "usehooks-ts": "^2.14.0"
   },
   "peerDependencies": {
     "react": "^18"
