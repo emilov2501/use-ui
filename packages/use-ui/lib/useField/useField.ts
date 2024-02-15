@@ -9,6 +9,7 @@ const useField = ({
   value = "",
   name,
   debounceDelay = 0,
+  onChange,
   disabled,
   ...props
 }: UseField.FieldPropsOptions): [
@@ -23,6 +24,7 @@ const useField = ({
   `_onChange`. */
   const debounced = debounce((e) => {
     _setDebouncedValue(e.target.value);
+    onChange?.(e);
   }, debounceDelay);
 
   const debouncedQuery = useCallback(
@@ -46,6 +48,7 @@ const useField = ({
       name,
       debouncedValue: _debouncedValue,
       disabled: disabled || undefined,
+      readOnly: !disabled ? undefined : disabled,
       "aria-disabled": !disabled ? undefined : disabled,
       onChange: _handleChange,
       ...props,

@@ -3,8 +3,9 @@ import "./App.css";
 
 function App() {
   const [{ debouncedValue, ...fieldProps }, { Field }] = useField({
-    debounceDelay: 1000,
+    debounceDelay: 500,
     value: "lox",
+    onChange: (e) => console.log(e),
   });
 
   const [btnProps, { Button }] = useButton({

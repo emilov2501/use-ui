@@ -2,13 +2,13 @@ import { ChangeEvent, HTMLProps } from "react";
 
 // useField.d.ts
 export declare namespace UseField {
-  type TField = Pick<
-    HTMLProps<HTMLInputElement>,
-    "value" | "name" | "disabled" | "aria-disabled"
-  >;
+  type TField = Pick<HTMLProps<HTMLInputElement>, "disabled" | "aria-disabled">;
   export interface FieldPropsOptions extends TField {
     debounceDelay?: number;
     value?: undefined | string;
+    name?: undefined | string;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    onBlur?: () => void;
   }
   export interface AriaFieldProps {
     role?: React.AriaRole;
@@ -21,6 +21,7 @@ export declare namespace UseField {
     defaultValue?: string;
     debouncedValue?: string;
     name?: string | undefined;
+    readOnly?: true | undefined;
     "aria-disabled:"?: true | undefined;
     disabled: boolean | undefined;
     onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
