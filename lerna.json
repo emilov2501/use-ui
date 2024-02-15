@@ -4,7 +4,8 @@
   "workspaces": ["packages/*"],
   "npmClient": "pnpm",
   "command": {
-    "publish": {
+    "version": {
+      "allowBranch": "main",
       "conventionalCommits": true
     }
   }
