@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.8](https://github.com/emilov2501/use-ui/compare/v0.1.6...v0.1.8) (2024-02-15)
+
+
+### Bug Fixes
+
+* **useButton:** fix button props ([3435f15](https://github.com/emilov2501/use-ui/commit/3435f153886bb902e7f10b875801cc84d5e81f1e))
+* **useField:** fix onChange props ([311fc73](https://github.com/emilov2501/use-ui/commit/311fc73e79817587f24ba018802cc722eb9f7e7e))
+* **useField:** fix useField props ([069b9e4](https://github.com/emilov2501/use-ui/commit/069b9e43e68cd30d74adc490e48113098d21c770))
+
+
+
+
+
 ## [0.1.7](https://github.com/emilov2501/use-ui/compare/v0.1.6...v0.1.7) (2024-02-15)
 
 
