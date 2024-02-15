@@ -24,7 +24,7 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       useui-ts:
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../packages/use-ui
     devDependencies:
       '@types/react':
@@ -82,6 +82,9 @@ importers:
       '@rollup/plugin-typescript':
         specifier: ^11.1.6
         version: 11.1.6(rollup@4.10.0)(tslib@2.6.2)(typescript@5.3.3)
+      '@types/lodash.debounce':
+        specifier: ^4.0.9
+        version: 4.0.9
       '@types/lodash.get':
         specifier: ^4.4.9
         version: 4.4.9
@@ -94,6 +97,9 @@ importers:
       cssnano:
         specifier: ^6.0.3
         version: 6.0.3(postcss@8.4.35)
+      lodash.debounce:
+        specifier: ^4.0.8
+        version: 4.0.8
       lodash.get:
         specifier: ^4.4.2
         version: 4.4.2
@@ -1478,6 +1484,12 @@ packages:
 
   /@types/json-schema@7.0.15:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
+    dev: true
+
+  /@types/lodash.debounce@4.0.9:
+    resolution: {integrity: sha512-Ma5JcgTREwpLRwMM+XwBR7DaWe96nC38uCBDFKZWbNKD+osjVzdpnUSwBcqCptrp16sSOLBAUb50Car5I0TCsQ==}
+    dependencies:
+      '@types/lodash': 4.14.202
     dev: true
 
   /@types/lodash.get@4.4.9:
@@ -4187,7 +4199,6 @@ packages:
 
   /lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
-    dev: false
 
   /lodash.get@4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}

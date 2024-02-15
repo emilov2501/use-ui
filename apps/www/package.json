@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "useui-ts": "workspace:^"
+    "useui-ts": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",
