@@ -68,10 +68,22 @@ const useButton = <TVariants,>({
 
   const className = React.useMemo(() => {
     if (prefix) {
+      return cls(prefix);
+    }
+
+    if (prefix && className) {
+      return cls(prefix, `${prefix}-${_className}`);
+    }
+
+    if (prefix && variant) {
+      return cls(prefix, `${prefix}-${variant || ""}`);
+    }
+
+    if (prefix && variant && className) {
       return cls(
         prefix,
         `${prefix}-${_className}`,
-        `${prefix}-${variant}` || ""
+        `${prefix}-${variant || ""}`
       );
     }
 
