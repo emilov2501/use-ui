@@ -20,6 +20,7 @@ const styles = stylex.create({
     rowGap: 4,
     textAlign: "left",
     border: "1px solid #ccc",
+    backgroundColor: "#fff",
     paddingInline: 16,
     paddingBlock: 16,
     overflow: "hidden",
