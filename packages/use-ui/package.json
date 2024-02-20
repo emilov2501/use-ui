@@ -13,14 +13,7 @@
   "license": "ISC",
   "types": "dist/types/index.d.ts",
   "styles": "dist/components/styles.css",
-  "directories": {
-    "hooks": "lib",
-    "components": "components"
-  },
   "sideEffects": false,
-  "files": [
-    "dist"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emilov2501/use-ui.git"
@@ -35,6 +28,8 @@
   "homepage": "https://github.com/emilov2501/use-ui#readme",
   "devDependencies": {
     "@stylexjs/esbuild-plugin": "^0.5.1",
+    "@stylexjs/eslint-plugin": "^0.5.1",
+    "@stylexjs/stylex": "^0.5.1",
     "@testing-library/react": "^14.2.1",
     "@testing-library/react-hooks": "^8.0.1",
     "@types/jest": "^29.5.12",
@@ -43,21 +38,19 @@
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "classnames": "^2.5.1",
+    "debounce": "^2.0.0",
     "esbuild": "^0.20.0",
     "esbuild-css-modules-plugin": "^3.1.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.get": "^4.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.2",
     "tslib": "^2.6.2",
-    "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "@stylexjs/stylex": "^0.5.1",
-    "lodash.debounce": "^4.0.8",
-    "lodash.get": "^4.4.2",
+    "typescript": "^5.3.3",
     "usehooks-ts": "^2.14.0"
   },
   "peerDependencies": {

@@ -1,46 +1,33 @@
 /**
- * Функция wait возвращает обещание, которое разрешается после указанной задержки.
- * @returns Функция wait возвращает функцию, которая принимает необязательный параметр Delay. Эта
- * внутренняя функция возвращает обещание, которое принимает значение true после указанной задержки с
- * использованием setTimeout.
+ * The `wait` function returns a promise that resolves after a specified delay.
+ * @param {number} [delay] - The `delay` parameter in the `wait` function is an optional parameter of
+ * type `number`. It represents the time in milliseconds that the function will wait before resolving
+ * the promise. If no `delay` value is provided, the default value is `undefined`.
+ * @returns A Promise is being returned.
  */
-let timerId: number | boolean;
-
 export const wait = (delay?: number) => {
-  timerId = false;
   return new Promise(function (resolve) {
-    if (!timerId) {
-      timerId = setTimeout(() => {
-        resolve(true);
-        timerId = true;
-      }, delay);
-    }
+    setTimeout(() => {
+      resolve(true);
+    }, delay);
   });
 };
 
-/**
- * Функция roundWithPrecision округляет число до указанной точности.
- * @param {number} n - Параметр n — это число, которое вы хотите округлить до определенной точности.
- * @param {number} precision - Параметр `precision` в функции `roundWithPrecision` указывает количество
- * десятичных знаков, до которых нужно округлить число `n`. Например, если точность равна 2, функция
- * округлит число n до 2 знаков после запятой.
- * @returns Функция roundWithPrecision возвращает число, округленное до указанной точности.
- */
 const roundWithPrecision = (n: number, precision: number): number => {
   const m = 10 ** precision;
   return Math.round(n * m) / m;
 };
 
 /**
- * Функция pxToRem преобразует значения пикселей в единицы измерения rem в TypeScript, обрабатывая
- * относительные измерения и возвращая преобразованное значение с точностью до 4 десятичных знаков.
- * @param {string | number} v - Параметр v в функции pxToRem представляет значение, которое вы хотите
- * преобразовать из пикселей в rems. Это может быть строка или число, например значение пикселя,
- * например «16 пикселей» или 16.
- * @returns Функция pxToRem возвращает строку со значением, преобразованным из пикселей в rem с
- * точностью до 4 десятичных знаков, за которым следует единица измерения «rem». Если входное значение
- * не является допустимым числом или уже находится в относительных единицах измерения (например, %, vh,
- * vw, rem, em, auto), оно возвращает исходное входное значение без преобразования.
+ * The `pxToRem` function converts pixel values to rem units in TypeScript, handling relative
+ * measurements and returning the converted value with a precision of 4 decimal places.
+ * @param {string | number} v - The `v` parameter in the `pxToRem` function represents the value that
+ * you want to convert from pixels to rems. It can be either a string or a number, such as a pixel
+ * value like '16px' or 16.
+ * @returns The `pxToRem` function returns a string with the value converted from pixels to rems with a
+ * precision of 4 decimal places followed by the "rem" unit. If the input value is not a valid number
+ * or already in a relative measurement unit (such as %, vh, vw, rem, em, auto), it returns the
+ * original input value.
  */
 export const pxToRem = (v: string | number): string | number => {
   const ratio = 16;

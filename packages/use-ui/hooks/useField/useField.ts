@@ -1,4 +1,4 @@
-import debounce from "lodash.debounce";
+import debounce from "debounce";
 import { ChangeEvent, useCallback, useState } from "react";
 import { UseField } from "./useField.types";
 

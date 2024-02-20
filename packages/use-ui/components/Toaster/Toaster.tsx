@@ -1,7 +1,13 @@
+import * as stylex from "@stylexjs/stylex";
 import React, { useSyncExternalStore } from "react";
-import { pxToRem } from "../../helpers";
 import storage from "../../hooks/useToast/useToastStore";
-import styles from "./styles.module.css";
+// import styles from "./styles.module.css";
+
+const styles = stylex.create({
+  toaster: {
+    display: "flex",
+  },
+});
 
 const Toaster = () => {
   const state = useSyncExternalStore(storage.subscribe, storage.getState);
@@ -17,17 +23,8 @@ const Toaster = () => {
         position: "fixed",
       }}
     >
-      <div
-        style={{
-          userSelect: "none",
-          touchAction: "none",
-          display: "flex",
-          flexDirection: "column",
-          rowGap: pxToRem(4),
-          textAlign: "left",
-        }}
-      >
-        <div className={styles.toaster}>{state.props.title}</div>
+      <div {...stylex.props(styles.toaster)}>
+        <div>{state.props.title}</div>
         <div>{state.props.description}</div>
       </div>
     </div>
