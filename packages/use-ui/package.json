@@ -25,6 +25,12 @@
   "bugs": {
     "url": "https://github.com/emilov2501/use-ui/issues"
   },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE.md"
+  ],
   "homepage": "https://github.com/emilov2501/use-ui#readme",
   "devDependencies": {
     "@stylexjs/esbuild-plugin": "^0.5.1",
