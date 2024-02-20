@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/emilov2501/use-ui/compare/v0.3.3...v0.3.4) (2024-02-20)
+
+
+### Bug Fixes
+
+* **app:** edit exports types ([84d6b8e](https://github.com/emilov2501/use-ui/commit/84d6b8e41c3034c6775b829370932e8c3a2abc26))
+* **app:** remove index.ts ([89ceaf0](https://github.com/emilov2501/use-ui/commit/89ceaf01f9c77636b59e47be195261bba852c3cb))
+
+
+
+
+
 ## [0.3.3](https://github.com/emilov2501/use-ui/compare/v0.3.2...v0.3.3) (2024-02-20)
 
 
