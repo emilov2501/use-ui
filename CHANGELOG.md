@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.6](https://github.com/emilov2501/use-ui/compare/v0.3.5...v0.3.6) (2024-02-20)
+
+
+### Bug Fixes
+
+* **useModal:** :art: add styles ([d9be17a](https://github.com/emilov2501/use-ui/commit/d9be17abb6dd15697d057b88b9c9341fc833e6d1))
+
+
+
+
+
 ## [0.3.5](https://github.com/emilov2501/use-ui/compare/v0.3.4...v0.3.5) (2024-02-20)
 
 **Note:** Version bump only for package root
