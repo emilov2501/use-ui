@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.3](https://github.com/emilov2501/use-ui/compare/v0.3.2...v0.3.3) (2024-02-20)
+
+
+### Bug Fixes
+
+* **app:** fix build version ([4fe987e](https://github.com/emilov2501/use-ui/commit/4fe987e35cc69e73248e1f3865f4c0d68d7a5c50))
+
+
+
+
+
 ## [0.3.2](https://github.com/emilov2501/use-ui/compare/v0.3.1...v0.3.2) (2024-02-20)
 
 
