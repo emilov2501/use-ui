@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/emilov2501/use-ui/compare/v0.2.1...v0.3.0) (2024-02-20)
+
+
+### Features
+
+* **useToast:** add stylex styles ([0dd8373](https://github.com/emilov2501/use-ui/commit/0dd8373f448009812dc7a7206fbf5eb5e65831d2))
+
+
+
+
+
 ## [0.2.1](https://github.com/emilov2501/use-ui/compare/v0.2.0...v0.2.1) (2024-02-20)
 
 
