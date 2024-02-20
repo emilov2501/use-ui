@@ -14,7 +14,6 @@
     "email": "emilov2501@gmail.com"
   },
   "license": "ISC",
-  "types": "dist/types/index.d.ts",
   "styles": "dist/components/styles.css",
   "sideEffects": false,
   "repository": {
@@ -29,8 +28,14 @@
     "url": "https://github.com/emilov2501/use-ui/issues"
   },
   "exports": {
-    "./hooks": "./dist/hooks/index.js",
-    "./components": "./dist/components/index.js"
+    "./hooks": {
+      "import": "./dist/hooks/index.js",
+      "types": "./dist/types/hooks/index.d.ts"
+    },
+    "./components": {
+      "import": "./dist/components/index.js",
+      "types": "./dist/types/components/index.d.ts"
+    }
   },
   "files": [
     "lib",
