@@ -1,14 +1,15 @@
 import cls from "classnames";
 import React, { HTMLProps, useMemo, useRef } from "react";
 import { useOnClickOutside } from "usehooks-ts";
-import { wait } from "../helpers";
-import styles from "../styles.module.css";
-import storage, { DELAY } from "./useModalStore";
+import { wait } from "../../helpers";
+import storage, { DELAY } from "../../hooks/useModal/useModalStore";
+import styles from "./modal.module.css";
+
 interface Props extends HTMLProps<HTMLDivElement> {
   currentModal: UseModal.Store.ModalData;
 }
 
-const useCustomModal = ({ currentModal, className = "" }: Props) => {
+const Modal = ({ currentModal, className = "" }: Props) => {
   const modalRef = useRef(null);
 
   const {
@@ -44,4 +45,4 @@ const useCustomModal = ({ currentModal, className = "" }: Props) => {
   );
 };
 
-export default useCustomModal;
+export default Modal;

@@ -8,7 +8,7 @@
     "skipLibCheck": true,
     "jsx": "react",
     "declaration": true,
-    "declarationDir": "dist",
+    "declarationDir": "dist/types",
     "emitDeclarationOnly": true,
     "sourceMap": true,
     "outDir": "dist",
@@ -16,13 +16,5 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "dist",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest"
-  ]
+  "include": ["."]
 }

@@ -2,14 +2,14 @@ import { useMemo, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 
 import React from "react";
-import UseCustomModal from "./useCustomModal";
-import storage from "./useModalStore";
+import storage from "../../hooks/useModal/useModalStore";
+import Modal from "./Modal";
 
-type GlobalModalProps = {
+type ModalPMrops = {
   className?: string | undefined;
 };
 
-const UseGlobalModal = (props?: GlobalModalProps) => {
+const ModalFactory = (props?: ModalPMrops) => {
   const { className } = props || {};
   const state = useSyncExternalStore(storage.subscribe, storage.getState);
 
@@ -23,7 +23,7 @@ const UseGlobalModal = (props?: GlobalModalProps) => {
   }
 
   return createPortal(
-    React.createElement(UseCustomModal, {
+    React.createElement(Modal, {
       key: currentActiveModal.modalName,
       currentModal: currentActiveModal,
       className,
@@ -32,4 +32,4 @@ const UseGlobalModal = (props?: GlobalModalProps) => {
   );
 };
 
-export default UseGlobalModal;
+export default ModalFactory;

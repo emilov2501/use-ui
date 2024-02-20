@@ -11,12 +11,11 @@
   ],
   "author": "Eldiyar Temir",
   "license": "ISC",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "style": "styles/index.css",
+  "types": "dist/types/index.d.ts",
+  "styles": "dist/components/styles.css",
   "directories": {
-    "lib": "lib"
+    "hooks": "lib",
+    "components": "components"
   },
   "sideEffects": false,
   "files": [
@@ -27,7 +26,7 @@
     "url": "git+https://github.com/emilov2501/use-ui.git"
   },
   "scripts": {
-    "build": "rimraf dist && node ./esbuild.mjs && tsc",
+    "build": "rimraf dist && node ./esbuild.config.mjs && tsc",
     "test": "jest"
   },
   "bugs": {
@@ -35,6 +34,7 @@
   },
   "homepage": "https://github.com/emilov2501/use-ui#readme",
   "devDependencies": {
+    "@stylexjs/esbuild-plugin": "^0.5.1",
     "@testing-library/react": "^14.2.1",
     "@testing-library/react-hooks": "^8.0.1",
     "@types/jest": "^29.5.12",
@@ -55,6 +55,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@stylexjs/stylex": "^0.5.1",
     "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.4.2",
     "usehooks-ts": "^2.14.0"

@@ -1,5 +1,4 @@
 import { useMemo, useSyncExternalStore } from "react";
-import UseGlobalModal from "./useGlobaModal";
 import storage, { DELAY } from "./useModalStore";
 
 /**
@@ -16,31 +15,21 @@ type ModalActions = {
   open: typeof storage.open;
   close: typeof storage.close;
   timeout: number;
+  hasModal: boolean | undefined;
 };
 
-type UseModalHookResult = [
-  ModalActions,
-  { Modal: typeof UseGlobalModal; isActive: boolean | undefined }
-];
+type UseModalHookResult = ModalActions;
 
-/**
- * Функция useModal возвращает массив из двух элементов — объекта со свойствами open, close и DELAY, а
- * также объекта со свойствами Modal и isActive.
- * @returns Функция useModal возвращает массив из двух элементов. Первый элемент — это объект со
- * свойствами open, close и DELAY. Второй элемент — это объект со свойствами Modal и isActive.
- */
 const useModal = (): UseModalHookResult => {
   const state = useSyncExternalStore(storage.subscribe, storage.getState);
   const modal = useMemo(() => storage.getActiveModal(), [state]);
 
-  return [
-    {
-      open: storage.open,
-      close: storage.close,
-      timeout: DELAY,
-    },
-    { Modal: UseGlobalModal, isActive: modal && modal.active },
-  ];
+  return {
+    open: storage.open,
+    close: storage.close,
+    timeout: DELAY,
+    hasModal: modal && modal.active,
+  };
 };
 
 export default useModal;

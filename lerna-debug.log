@@ -1,0 +1,19 @@
+0 silly argv {
+0 silly argv   _: [ 'run' ],
+0 silly argv   scope: 'www',
+0 silly argv   lernaVersion: '8.1.2',
+0 silly argv   '$0': 'node_modules/lerna/dist/cli.js',
+0 silly argv   script: 'dev'
+0 silly argv }
+1 notice cli v8.1.2
+2 verbose packageConfigs Package manager "pnpm" detected. Resolving packages using `pnpm-workspace.yaml`.
+3 verbose rootPath /Users/eldiaremilov/projects/packages/use-ui
+4 error Error: Unsupported URL Type "fiel:": fiel:../../../../packages/use-ui/dist
+4 error     at unsupportedURLType (/Users/eldiaremilov/projects/packages/use-ui/node_modules/.pnpm/npm-package-arg@8.1.1/node_modules/npm-package-arg/npa.js:203:15)
+4 error     at fromURL (/Users/eldiaremilov/projects/packages/use-ui/node_modules/.pnpm/npm-package-arg@8.1.1/node_modules/npm-package-arg/npa.js:261:13)
+4 error     at resolve (/Users/eldiaremilov/projects/packages/use-ui/node_modules/.pnpm/npm-package-arg@8.1.1/node_modules/npm-package-arg/npa.js:80:12)
+4 error     at resolvePackage (/Users/eldiaremilov/projects/packages/use-ui/node_modules/.pnpm/lerna@8.1.2/node_modules/lerna/dist/index.js:1553:60)
+4 error     at /Users/eldiaremilov/projects/packages/use-ui/node_modules/.pnpm/lerna@8.1.2/node_modules/lerna/dist/index.js:1498:30
+4 error     at Array.forEach (<anonymous>)
+4 error     at createProjectGraphWithPackages (/Users/eldiaremilov/projects/packages/use-ui/node_modules/.pnpm/lerna@8.1.2/node_modules/lerna/dist/index.js:1481:60)
+4 error     at async detectProjects (/Users/eldiaremilov/projects/packages/use-ui/node_modules/.pnpm/lerna@8.1.2/node_modules/lerna/dist/index.js:1565:24)

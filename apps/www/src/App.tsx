@@ -1,30 +1,28 @@
-import { CSSTransition } from "react-transition-group";
-import { useButton, useField, useModal } from "useui-ts";
-import "useui-ts/dist/index.css";
+import { useButton, useField, useModal, useToast } from "useui-ts";
 import "./App.css";
 
 function App() {
-  const [modal, { Modal, isActive }] = useModal();
-
+  const modal = useModal();
   const [{ debouncedValue, ...fieldProps }, { Field }] = useField();
 
+  const toast = useToast();
   const [btnProps, { Button }] = useButton({
     onClick: () => modal.open("hello", {}),
+  });
+
+  const [btnProps2, { Button: Two }] = useButton({
+    onClick: () =>
+      toast({
+        title: "Uh No! Something went wrong",
+        description: "There was a problet with your request",
+      }),
   });
 
   return (
     <>
       <Field {...fieldProps} className="hello" />
-      <CSSTransition
-        in={isActive}
-        timeout={modal.timeout}
-        classNames="modal"
-        unmountOnExit
-      >
-        <Modal className="modal--animate" />
-      </CSSTransition>
-      {debouncedValue}
       <Button {...btnProps}>hello</Button>
+      <Two {...btnProps2}>Two</Two>
     </>
   );
 }
