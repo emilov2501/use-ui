@@ -1,23 +1,11 @@
 import styleXPlugin from "@stylexjs/esbuild-plugin";
 import * as esbuild from "esbuild";
 
-const aliasPlugin = {
-  name: "alias",
-  setup(build) {
-    build.onResolve({ filter: /^useui-ts$/ }, (args) => {
-      return { path: path.resolve("node_modules/useui-ts/hooks/index.js") };
-    });
-    build.onResolve({ filter: /^useui-ts\/components$/ }, (args) => {
-      return {
-        path: path.resolve("node_modules/useui-ts/components/index.js"),
-      };
-    });
-  },
-};
-
 let plugins = [
-  aliasPlugin,
   styleXPlugin({
+    dev: false,
+    useRemForFontSize: true,
+    classNamePrefix: "UI",
     generatedCSSFileName: "./dist/components/styles.css",
   }),
 ];
@@ -36,6 +24,10 @@ await esbuild.build({
   minify: true,
   treeShaking: true,
   plugins: [...plugins],
+  loader: {
+    ".js": "jsx", // Для обработки JSX
+    ".css": "css", // Для обработки CSS
+  },
   external: ["react", "react-dom"],
   tsconfig: "./tsconfig.build.json",
 });
