@@ -1,5 +1,20 @@
+import styleXPlugin from "@stylexjs/esbuild-plugin";
 import * as esbuild from "esbuild";
 import pkg from "./package.json" assert { type: "json" };
+
+// Определение режима сборки
+const isProd = process.env.NODE_ENV === "production";
+
+let plugins = [];
+
+if (isProd) {
+  plugins.push(
+    styleXPlugin({
+      generatedCSSFileName: "./dist/components/styles.css",
+    })
+  );
+  // Можно добавить другие плагины или настройки, специфичные для продакшена
+}
 // Плагин для алиасов
 const aliasPlugin = {
   name: "alias",
@@ -22,7 +37,8 @@ await esbuild.build({
   bundle: true,
   format: "esm",
   minify: true,
-  plugins: [aliasPlugin],
+  treeShaking: true,
+  plugins: [aliasPlugin, ...plugins],
   external: [
     ...Object.keys(pkg.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {}),

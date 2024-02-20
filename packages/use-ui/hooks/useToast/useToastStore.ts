@@ -1,7 +1,7 @@
 import { ToastProps, UseToastState } from "./useToast.types";
 
 let HIDE_TOAST_AFTER = 4000;
-let toastTimeoutId: number | null = null;
+let toastTimeoutId: null | ReturnType<typeof setTimeout>;
 
 let state: UseToastState = {
   show: false,
@@ -62,10 +62,11 @@ const toast = (props: ToastProps) => {
 
   setProps(props);
   show();
-  // toastTimeoutId = setTimeout(() => {
-  //   hide();
-  //   toastTimeoutId = null;
-  // }, HIDE_TOAST_AFTER);
+
+  toastTimeoutId = setTimeout(() => {
+    hide();
+    toastTimeoutId = null;
+  }, HIDE_TOAST_AFTER);
 };
 
 const getState = () => state;
