@@ -7,7 +7,8 @@
   "scripts": {
     "release": "lerna publish from-package --no-private",
     "version": "lerna version --no-private",
-    "build": "lerna run build --scope useui-ts --stream",
+    "build:prod": "lerna run build:prod --scope useui-ts --stream",
+    "build:dev": "lerna run build:dev --scope useui-ts --stream",
     "dev": "lerna run dev --scope www --stream"
   },
   "devDependencies": {

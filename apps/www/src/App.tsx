@@ -1,4 +1,4 @@
-import { useButton, useField, useModal, useToast } from "useui-ts";
+import { useButton, useField, useModal, useToast } from "useui-ts/hooks";
 import "./App.css";
 
 function App() {
