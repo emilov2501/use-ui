@@ -1,14 +1,6 @@
 import styleXPlugin from "@stylexjs/esbuild-plugin";
 import * as esbuild from "esbuild";
-import pkg from "./package.json" assert { type: "json" };
 
-let plugins = [
-  styleXPlugin({
-    generatedCSSFileName: "./dist/components/styles.css",
-  }),
-];
-
-// Плагин для алиасов
 const aliasPlugin = {
   name: "alias",
   setup(build) {
@@ -23,18 +15,27 @@ const aliasPlugin = {
   },
 };
 
+let plugins = [
+  aliasPlugin,
+  styleXPlugin({
+    generatedCSSFileName: "./dist/components/styles.css",
+  }),
+];
+
+// Плагин для алиасов
+
 await esbuild.build({
-  entryPoints: ["./hooks/index.ts", "./components/index"],
+  entryPoints: {
+    "hooks/index": "./hooks/index.ts",
+    "components/index": "./components/index.ts",
+  },
   outdir: "dist",
   splitting: true,
   bundle: true,
   format: "esm",
   minify: true,
   treeShaking: true,
-  plugins: [aliasPlugin, ...plugins],
-  external: [
-    ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.peerDependencies || {}),
-  ],
+  plugins: [...plugins],
+  external: ["react", "react-dom"],
   tsconfig: "./tsconfig.build.json",
 });

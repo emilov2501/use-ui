@@ -1,8 +1,8 @@
 import cls from "classnames";
 import React, { HTMLProps, useMemo, useRef } from "react";
 import { useOnClickOutside } from "usehooks-ts";
-import { wait } from "../../helpers";
 import storage, { DELAY } from "../../hooks/useModal/useModalStore";
+import { wait } from "../../lib/helpers";
 import styles from "./modal.module.css";
 
 interface Props extends HTMLProps<HTMLDivElement> {

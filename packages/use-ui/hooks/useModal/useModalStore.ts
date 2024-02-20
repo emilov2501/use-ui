@@ -1,4 +1,4 @@
-import { wait } from "../../helpers";
+import { wait } from "../../lib/helpers";
 
 export const DELAY = 200;
 
