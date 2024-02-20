@@ -39,9 +39,7 @@
     }
   },
   "files": [
-    "lib",
     "dist",
-    "dist/**/*.css",
     "package.json",
     "README.md",
     "LICENSE.md"
