@@ -1,4 +1,3 @@
-import styleXPlugin from "@stylexjs/esbuild-plugin";
 import * as esbuild from "esbuild";
 import CssModulesPlugin from "esbuild-css-modules-plugin";
 import path from "path";
@@ -8,11 +7,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 let plugins = [
-  CssModulesPlugin(),
-  styleXPlugin({
-    dev: false,
-    useRemForFontSize: true,
-    generatedCSSFileName: "dist/components/styles.css",
+  CssModulesPlugin({
+    localsConvention: "camelCaseOnly",
   }),
 ];
 

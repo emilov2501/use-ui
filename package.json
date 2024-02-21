@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "build:prod": "nx run useui-ts:build:prod",
-    "watch:useui-ts": "nx watch --projects=useui-ts --skip-nx-cache -- nx build:dev useui-ts",
+    "watch:useui-ts": "nx watch --projects=useui-ts -- nx build:dev useui-ts",
     "dev:www": "nx dev www --skip-nx-cache",
     "release": "lerna publish from-package --no-private",
     "version": "lerna version --no-private"

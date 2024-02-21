@@ -71,18 +71,11 @@ importers:
         version: 0.3.0
 
   packages/use-ui:
-    dependencies:
-      compose-function:
-        specifier: ^3.0.3
-        version: 3.0.3
     devDependencies:
       '@stylexjs/esbuild-plugin':
         specifier: ^0.5.1
         version: 0.5.1
       '@stylexjs/eslint-plugin':
-        specifier: ^0.5.1
-        version: 0.5.1
-      '@stylexjs/stylex':
         specifier: ^0.5.1
         version: 0.5.1
       '@testing-library/react':
@@ -97,9 +90,6 @@ importers:
       '@types/jest':
         specifier: ^29.5.12
         version: 29.5.12
-      '@types/lodash.debounce':
-        specifier: ^4.0.9
-        version: 4.0.9
       '@types/lodash.get':
         specifier: ^4.4.9
         version: 4.4.9
@@ -115,6 +105,9 @@ importers:
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
+      compose-function:
+        specifier: ^3.0.3
+        version: 3.0.3
       debounce:
         specifier: ^2.0.0
         version: 2.0.0
@@ -130,9 +123,6 @@ importers:
       jest-environment-jsdom:
         specifier: ^29.7.0
         version: 29.7.0
-      lodash.debounce:
-        specifier: ^4.0.8
-        version: 4.0.8
       lodash.get:
         specifier: ^4.4.2
         version: 4.4.2
@@ -151,9 +141,6 @@ importers:
       ts-jest:
         specifier: ^29.1.2
         version: 29.1.2(@babel/core@7.23.9)(esbuild@0.20.0)(jest@29.7.0)(typescript@5.3.3)
-      tslib:
-        specifier: ^2.6.2
-        version: 2.6.2
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -2156,12 +2143,6 @@ packages:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
     dev: true
 
-  /@types/lodash.debounce@4.0.9:
-    resolution: {integrity: sha512-Ma5JcgTREwpLRwMM+XwBR7DaWe96nC38uCBDFKZWbNKD+osjVzdpnUSwBcqCptrp16sSOLBAUb50Car5I0TCsQ==}
-    dependencies:
-      '@types/lodash': 4.14.202
-    dev: true
-
   /@types/lodash.get@4.4.9:
     resolution: {integrity: sha512-J5dvW98sxmGnamqf+/aLP87PYXyrha9xIgc2ZlHl6OHMFR2Ejdxep50QfU0abO1+CH6+ugx+8wEUN1toImAinA==}
     dependencies:
@@ -2590,7 +2571,7 @@ packages:
 
   /arity-n@1.0.4:
     resolution: {integrity: sha512-fExL2kFDC1Q2DUOx3whE/9KoN66IzkY4b4zUHUBFM1ojEYjZZYDcUW3bek/ufGionX9giIKDC5redH2IlGqcQQ==}
-    dev: false
+    dev: true
 
   /array-buffer-byte-length@1.0.1:
     resolution: {integrity: sha512-ahC5W1xgou+KTXix4sAO8Ki12Q+jf4i0+tmk3sC+zgcynshkHxzpXdImBehiUYKKKDwvfFiJl1tZt6ewscS1Mg==}
@@ -3108,7 +3089,7 @@ packages:
     resolution: {integrity: sha512-xzhzTJ5eC+gmIzvZq+C3kCJHsp9os6tJkrigDRZclyGtOKINbZtE8n1Tzmeh32jW+BUDPbvZpibwvJHBLGMVwg==}
     dependencies:
       arity-n: 1.0.4
-    dev: false
+    dev: true
 
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}

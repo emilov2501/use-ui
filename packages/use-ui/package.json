@@ -28,7 +28,7 @@
     "url": "https://github.com/emilov2501/use-ui/issues"
   },
   "exports": {
-    "./styles.css": "./dist/components/styles.css",
+    "./styles.css": "./dist/components/index.css",
     "./hooks": {
       "import": "./dist/hooks/index.js",
       "types": "./dist/types/hooks/index.d.ts"
@@ -48,12 +48,10 @@
   "devDependencies": {
     "@stylexjs/esbuild-plugin": "^0.5.1",
     "@stylexjs/eslint-plugin": "^0.5.1",
-    "@stylexjs/stylex": "^0.5.1",
     "@testing-library/react": "^14.2.1",
     "@testing-library/react-hooks": "^8.0.1",
     "@types/compose-function": "^0.0.33",
     "@types/jest": "^29.5.12",
-    "@types/lodash.debounce": "^4.0.9",
     "@types/lodash.get": "^4.4.9",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
@@ -65,14 +63,12 @@
     "esbuild-css-modules-plugin": "^3.1.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "lodash.debounce": "^4.0.8",
     "lodash.get": "^4.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-transition-group": "^4.4.5",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.2",
-    "tslib": "^2.6.2",
     "typescript": "^5.3.3",
     "usehooks-ts": "^2.14.0"
   },
