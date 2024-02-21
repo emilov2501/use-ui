@@ -1,6 +1,6 @@
 import { ToastProps, UseToastState } from "./useToast.types";
 
-let HIDE_TOAST_AFTER = 4000;
+let HIDE_TOAST_AFTER = 5000;
 let toastTimeoutId: null | ReturnType<typeof setTimeout>;
 
 let state: UseToastState = {
@@ -74,6 +74,8 @@ const getState = () => state;
 const storage = {
   getState,
   subscribe,
+  show: state.show,
+  hide,
   toast,
 };
 
