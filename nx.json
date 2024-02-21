@@ -5,11 +5,6 @@
     "lib": ["{projectRoot}/lib/**/*.ts"]
   },
   "targetDefaults": {
-    "dev": {
-      "dependsOn": [
-        "^build:dev"
-      ]
-    },
     "build:dev": {
       "inputs": ["components", "hooks", "lib"]
     }
