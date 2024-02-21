@@ -59,7 +59,6 @@
     "@types/react-dom": "^18.2.19",
     "@types/react-transition-group": "^4.4.10",
     "classnames": "^2.5.1",
-    "compose-function": "^3.0.3",
     "debounce": "^2.0.0",
     "esbuild": "^0.20.0",
     "esbuild-css-modules-plugin": "^3.1.0",
@@ -87,6 +86,7 @@
   },
   "gitHead": "cfb26562cf083865574ae095f96175a3222523f5",
   "dependencies": {
+    "compose-function": "^3.0.3",
     "react-transition-group": "^4.4.5"
   }
 }
