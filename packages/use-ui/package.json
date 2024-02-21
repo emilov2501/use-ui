@@ -68,11 +68,11 @@
     "lodash.get": "^4.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-transition-group": "^4.4.5",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.2",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
+    "compose-function": "^3.0.3",
     "usehooks-ts": "^2.14.0"
   },
   "peerDependencies": {
@@ -87,6 +87,6 @@
   },
   "gitHead": "cfb26562cf083865574ae095f96175a3222523f5",
   "dependencies": {
-    "compose-function": "^3.0.3"
+    "react-transition-group": "^4.4.5"
   }
 }
