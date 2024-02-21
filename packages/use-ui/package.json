@@ -51,11 +51,13 @@
     "@stylexjs/stylex": "^0.5.1",
     "@testing-library/react": "^14.2.1",
     "@testing-library/react-hooks": "^8.0.1",
+    "@types/compose-function": "^0.0.33",
     "@types/jest": "^29.5.12",
     "@types/lodash.debounce": "^4.0.9",
     "@types/lodash.get": "^4.4.9",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
+    "@types/react-transition-group": "^4.4.10",
     "classnames": "^2.5.1",
     "debounce": "^2.0.0",
     "esbuild": "^0.20.0",
@@ -66,6 +68,7 @@
     "lodash.get": "^4.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-transition-group": "^4.4.5",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.2",
     "tslib": "^2.6.2",
@@ -81,5 +84,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "gitHead": "cfb26562cf083865574ae095f96175a3222523f5",
+  "dependencies": {
+    "compose-function": "^3.0.3"
   }
 }

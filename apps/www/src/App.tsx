@@ -14,6 +14,7 @@ function App() {
       toast({
         title: "Uh No! Something went wrong",
         description: "There was a problet with your request",
+        variant: "error",
       }),
   });
 
