@@ -74,7 +74,7 @@ const getState = () => state;
 const storage = {
   getState,
   subscribe,
-  show: state.show,
+  show,
   hide,
   toast,
 };
