@@ -1,6 +1,6 @@
 {
   "name": "useui-ts",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "private": false,
   "description": "React UI hook library, ready to use, written in Typescript.",
   "keywords": [
@@ -59,6 +59,7 @@
     "@types/react-dom": "^18.2.19",
     "@types/react-transition-group": "^4.4.10",
     "classnames": "^2.5.1",
+    "compose-function": "^3.0.3",
     "debounce": "^2.0.0",
     "esbuild": "^0.20.0",
     "esbuild-css-modules-plugin": "^3.1.0",
@@ -68,13 +69,12 @@
     "lodash.get": "^4.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-transition-group": "^4.4.5",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.2",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
-    "usehooks-ts": "^2.14.0",
-    "compose-function": "^3.0.3",
-    "react-transition-group": "^4.4.5"
+    "usehooks-ts": "^2.14.0"
   },
   "peerDependencies": {
     "react": "^18",
