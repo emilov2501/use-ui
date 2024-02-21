@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/emilov2501/use-ui/compare/v1.1.0...v1.2.0) (2024-02-21)
+
+
+### Features
+
+* **useMediaQuery:** implement useMediaQuery hook ([288f68e](https://github.com/emilov2501/use-ui/commit/288f68efc4b654932770c336dc5862edf8d1bfdf))
+* **useToast:** add transition group for media query ([f3c8596](https://github.com/emilov2501/use-ui/commit/f3c85961c670edb740b822291d7ce5f06855b2b7))
+
+
+
+
+
 # [1.1.0](https://github.com/emilov2501/use-ui/compare/v1.0.2...v1.1.0) (2024-02-21)
 
 
