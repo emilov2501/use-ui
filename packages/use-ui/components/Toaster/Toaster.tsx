@@ -1,15 +1,27 @@
 import * as stylex from "@stylexjs/stylex";
 import React, { useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import storage from "../../hooks/useToast/useToastStore";
-// import styles from "./styles.module.css";
 
 const styles = stylex.create({
   container: {
+    boxSizing: "border-box",
     position: "fixed",
     zIndex: 100,
-    bottom: 15,
-    right: 15,
-    maxWidth: 420,
+    bottom: {
+      "@media (min-width: 640px)": 0,
+    },
+    top: {
+      default: 0,
+      "@media (min-width: 640px)": "auto",
+    },
+    right: {
+      "@media (min-width: 640px)": 0,
+    },
+    width: {
+      default: "100%",
+      "@media (min-width: 768px)": 420,
+    },
     padding: 16,
   },
   toaster: {
@@ -46,7 +58,7 @@ const Toaster = () => {
     return null;
   }
 
-  return (
+  return createPortal(
     <div {...stylex.props(styles.container)}>
       <div {...stylex.props(styles.toaster)}>
         <div {...stylex.props(styles.title)}>{state.props.title}</div>
@@ -54,7 +66,8 @@ const Toaster = () => {
           {state.props.description}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

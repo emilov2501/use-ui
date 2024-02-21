@@ -1,8 +1,8 @@
+import { wait } from "@/lib/helpers";
 import * as stylex from "@stylexjs/stylex";
 import React, { HTMLProps, useRef } from "react";
 import { useOnClickOutside } from "usehooks-ts";
 import storage, { DELAY } from "../../hooks/useModal/useModalStore";
-import { wait } from "../../lib/helpers";
 
 const styles = stylex.create({
   container: {
@@ -18,7 +18,7 @@ const styles = stylex.create({
     backdropFilter: "blur(6px)",
   },
   modal: {
-    margin: 15,
+    margin: 12,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
