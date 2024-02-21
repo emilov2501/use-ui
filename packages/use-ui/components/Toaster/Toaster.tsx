@@ -1,11 +1,14 @@
+import { useMediaQuery } from "@/hooks";
 import * as stylex from "@stylexjs/stylex";
 import compose from "compose-function";
 import React, {
   ForwardRefExoticComponent,
   forwardRef,
+  useMemo,
   useSyncExternalStore,
 } from "react";
 import { CSSTransition } from "react-transition-group";
+import { CSSTransitionClassNames } from "react-transition-group/CSSTransition";
 import storage from "../../hooks/useToast/useToastStore";
 
 const Toaster = forwardRef<HTMLDivElement>((_, nodeRef) => {
@@ -29,17 +32,32 @@ const WithCSSTransition = (Component: ForwardRefExoticComponent<any>) => {
   const ToastTranstition = () => {
     const state = useSyncExternalStore(storage.subscribe, storage.getState);
     const nodeRef = React.useRef(null);
+    const max640 = useMediaQuery("(max-width: 640px)");
+    const min768 = useMediaQuery("(min-width: 768px)");
+
+    const className: CSSTransitionClassNames = useMemo(
+      () => ({
+        enter: stylex.props(
+          max640 && animate.toastEnter640,
+          !max640 && animate.toastEnter
+        ).className,
+        enterActive: stylex.props(animate.toastEnterActive).className,
+        exit: stylex.props(animate.toastExit).className,
+        exitActive: stylex.props(
+          max640 && animate.toastExitActiveMax640,
+          !max640 && animate.toastExitActiveMin640,
+          min768 && animate.toastExitActive
+        ).className,
+      }),
+      [max640, min768]
+    );
+
     return (
       <CSSTransition
         in={state.show}
         nodeRef={nodeRef}
         timeout={300}
-        classNames={{
-          enter: stylex.props(animate.toastEnter).className,
-          enterActive: stylex.props(animate.toastEnterActive).className,
-          exit: stylex.props(animate.toastExit).className,
-          exitActive: stylex.props(animate.toastExitActive).className,
-        }}
+        classNames={className}
         onExited={storage.hide}
         unmountOnExit
       >
@@ -52,6 +70,12 @@ const WithCSSTransition = (Component: ForwardRefExoticComponent<any>) => {
 };
 
 const animate = stylex.create({
+  /* These CSS properties `toastEnter640` and `toastEnter` are defining the styles for the enter
+  animation of the toast component. */
+  toastEnter640: {
+    opacity: 0,
+    transform: "translateY(-100%)",
+  },
   toastEnter: {
     opacity: 0,
     transform: "translateY(100%)",
@@ -64,6 +88,18 @@ const animate = stylex.create({
   toastExit: {
     opacity: 1,
     transform: "translateY(0)",
+  },
+  /* These CSS properties `toastExitActive640` and `toastExitActive` are defining the styles for the
+ exit animation of the toast component. */
+  toastExitActiveMin640: {
+    opacity: 0,
+    transform: "translateX(0) translateY(100%)",
+    transition: "opacity 300ms, transform 300ms",
+  },
+  toastExitActiveMax640: {
+    opacity: 0,
+    transform: "translateX(0) translateY(-100%)",
+    transition: "opacity 300ms, transform 300ms",
   },
   toastExitActive: {
     opacity: 0,
