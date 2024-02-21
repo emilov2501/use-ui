@@ -1,7 +1,8 @@
 {
   "namedInputs": {
     "components": ["{projectRoot}/components/**/*.ts", "{projectRoot}/components/**/*.tsx"],
-    "hooks": ["{projectRoot}/hooks/**/*.ts"]
+    "hooks": ["{projectRoot}/hooks/**/*.ts"],
+    "lib": ["{projectRoot}/lib/**/*.ts"]
   },
   "targetDefaults": {
     "dev": {
@@ -10,7 +11,7 @@
       ]
     },
     "build:dev": {
-      "inputs": ["components", "hooks"]
+      "inputs": ["components", "hooks", "lib"]
     }
   },
   "nxCloudAccessToken": "YWJhY2QwNjUtMTllNC00Y2IzLWJjMmMtNGY1NzBhZTRhNjE0fHJlYWQtd3JpdGU="

@@ -14,7 +14,10 @@
     "outDir": "dist",
     "moduleResolution": "Bundler",
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": ["./*"],
+    }
   },
   "include": ["."]
 }
