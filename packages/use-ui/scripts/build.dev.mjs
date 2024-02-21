@@ -14,7 +14,7 @@ let plugins = [
   styleXPlugin({
     dev: true,
     useRemForFontSize: true,
-    generatedCSSFileName: "dist/styles.css",
+    generatedCSSFileName: "dist/components/styles.css",
   }),
 ];
 

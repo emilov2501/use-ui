@@ -4,7 +4,8 @@
   "npmClient": "pnpm",
   "command": {
     "version": {
-      "allowBranch": "main"
+      "allowBranch": "main",
+      "conventionalCommits": true
     },
     "publish": {
       "npmClient": "npm"
