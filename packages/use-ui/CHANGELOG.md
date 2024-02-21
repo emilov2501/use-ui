@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/emilov2501/use-ui/compare/v1.0.2...v1.1.0) (2024-02-21)
+
+
+### Bug Fixes
+
+* fix config ([13dca3c](https://github.com/emilov2501/use-ui/commit/13dca3cd97d9459a4bf1b210e01e1db9eef3e003))
+* **styles:** :art: fix component styles ([21f5dd4](https://github.com/emilov2501/use-ui/commit/21f5dd4c3c4f8c8cbca3c3c48907baf364f8207b))
+
+
+### Features
+
+* **useToast:** implement react-transition-group aniimation ([fcdb07b](https://github.com/emilov2501/use-ui/commit/fcdb07b2adb7d65ec254e25d9eb1cbd083b63ce6))
+
+
+
+
+
 ## [0.3.6](https://github.com/emilov2501/use-ui/compare/v0.3.5...v0.3.6) (2024-02-20)
 
 
