@@ -72,7 +72,9 @@
     "ts-jest": "^29.1.2",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
-    "usehooks-ts": "^2.14.0"
+    "usehooks-ts": "^2.14.0",
+    "compose-function": "^3.0.3",
+    "react-transition-group": "^4.4.5"
   },
   "peerDependencies": {
     "react": "^18",
@@ -84,9 +86,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "cfb26562cf083865574ae095f96175a3222523f5",
-  "dependencies": {
-    "compose-function": "^3.0.3",
-    "react-transition-group": "^4.4.5"
-  }
+  "gitHead": "cfb26562cf083865574ae095f96175a3222523f5"
 }
