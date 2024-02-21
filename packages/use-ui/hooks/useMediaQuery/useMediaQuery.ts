@@ -16,32 +16,31 @@ function useMediaQuery(query: string) {
   const isClient = typeof window === "object";
 
   // Состояние для хранения текущего соответствия медиа-запросу
-  const [matches, setMatches] = useState(() => {
-    if (isClient) {
-      return window.matchMedia(query).matches;
-    }
-    // Возвращаем false или другое значение по умолчанию для SSR
-    return false;
-  });
+  const [matches, setMatches] = useState<boolean>(false);
 
   useEffect(() => {
     if (!isClient) {
-      return undefined;
+      return;
     }
 
-    // Функция для обновления состояния соответствия медиа-запросу
-    const handler = (event: MediaQueryListEvent) => setMatches(event.matches);
-
-    // Создаем MediaQueryList и подписываемся на событие изменения
     const matchMedia: MediaQueryList = window.matchMedia(query);
-    matchMedia.addEventListener("change", handler);
 
-    // Первоначальная проверка соответствия
+    // Обновляем состояние, если соответствие медиа-запросу изменяется
+    const handleChange = (event: MediaQueryListEvent): void => {
+      setMatches(event.matches);
+    };
+
+    // Устанавливаем начальное значение
     setMatches(matchMedia.matches);
 
-    // Отписываемся от события при размонтировании компонента
-    return () => matchMedia.removeEventListener("change", handler);
-  }, [query, isClient]); // Перезапускаем эффект при изменении запроса или при изменении среды выполнения
+    // Подписываемся на изменения медиа-запроса
+    matchMedia.addEventListener("change", handleChange);
+
+    // Очистка подписки при размонтировании компонента
+    return () => {
+      matchMedia.removeEventListener("change", handleChange);
+    };
+  }, [query, isClient]);
 
   return matches;
 }
