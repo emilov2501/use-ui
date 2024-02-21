@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.8](https://github.com/emilov2501/use-ui/compare/v1.2.7...v1.2.8) (2024-02-21)
+
+
+### Bug Fixes
+
+* **module:** fix import ([d9ccc6e](https://github.com/emilov2501/use-ui/commit/d9ccc6ee6c821635ed3b4e4006409e2563cd99ed))
+
+
+
+
+
 ## [1.2.7](https://github.com/emilov2501/use-ui/compare/v1.2.6...v1.2.7) (2024-02-21)
 
 **Note:** Version bump only for package useui-ts
