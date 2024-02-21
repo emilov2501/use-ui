@@ -5,15 +5,16 @@
     "packages/*"
   ],
   "scripts": {
+    "build:prod": "nx run useui-ts:build:prod",
+    "watch:useui-ts": "nx watch --projects=useui-ts -- nx build:dev useui-ts",
+    "dev:www": "nx dev www",
     "release": "lerna publish from-package --no-private",
-    "version": "lerna version --no-private",
-    "build:prod": "lerna run build:prod --scope useui-ts --stream",
-    "build:dev": "lerna run build:dev --scope useui-ts --stream",
-    "dev": "lerna run dev --scope www --stream"
+    "version": "lerna version --no-private"
   },
   "devDependencies": {
-    "lerna": "^8.1.2",
-    "lerna-changelog": "^2.2.0"
+    "lerna": "8.1.2",
+    "lerna-changelog": "^2.2.0",
+    "nx": "9999.0.1"
   },
   "changelog": {
     "labels": {
@@ -23,3 +24,4 @@
     }
   }
 }
+

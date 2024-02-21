@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build:prod": "rimraf dist && node ./scripts/build.prod.mjs && tsc",
-    "build:dev": "rimraf dist && node ./scripts/build.dev.mjs && tsc",
+    "build:dev": "node ./scripts/build.dev.mjs && tsc",
     "test": "jest"
   },
   "bugs": {

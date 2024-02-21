@@ -7,7 +7,7 @@ function App() {
 
   const toast = useToast();
   const [btnProps, { Button }] = useButton({
-    onClick: () => modal.open("hello", {}),
+    onClick: () => modal.open("hello", { size: "xs" }),
   });
 
   const [btnProps2, { Button: Two }] = useButton({

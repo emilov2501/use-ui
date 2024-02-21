@@ -18,6 +18,7 @@ const styles = stylex.create({
     backdropFilter: "blur(6px)",
   },
   modal: {
+    margin: 15,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

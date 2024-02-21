@@ -14,10 +14,9 @@ let plugins = [
   styleXPlugin({
     dev: true,
     useRemForFontSize: true,
+    generatedCSSFileName: "dist/styles.css",
   }),
 ];
-
-// Плагин для алиасов
 
 await esbuild.build({
   metafile: true,
