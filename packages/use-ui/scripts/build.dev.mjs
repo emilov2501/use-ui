@@ -23,10 +23,7 @@ await esbuild.build({
   bundle: true,
   sourcemap: true,
   format: "esm",
-  loader: {
-    ".ts": "ts",
-    ".tsx": "tsx",
-  },
+
   define: {
     "process.env.NODE_ENV": "'development'",
   },

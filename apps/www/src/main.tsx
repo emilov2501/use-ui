@@ -6,7 +6,12 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <>
     <App />
-    <Modal />
+    <Modal
+      className="mymodal"
+      style={{
+        borderRadius: "10px",
+      }}
+    />
     <Toaster />
   </>
 );
