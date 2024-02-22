@@ -1,14 +1,21 @@
-import { UseButton } from "./useButton.types";
-
+import type {
+  ButtonProps,
+  ButtonPropsMetadata,
+  ButtonPropsOptions,
+} from "@/types/button";
 import cls from "classnames";
 import * as React from "react";
 
-/* Функция useButton — это специальный хук React, который возвращает массив, содержащий два
-элемента. Первый элемент — это объект, содержащий реквизиты, которые следует передать
-компоненту кнопки. Второй элемент — это объект, содержащий метаданные о компоненте кнопки. */
+/**
+ * The `useButton` function in TypeScript React returns button props and metadata based on the provided
+ * options.
+ * @param [props] - The `props` parameter in the `useButton` function is an optional object that
+ * contains various options for configuring the button component. These options include:
+ * @returns The `useButton` function returns an array with two elements:
+ */
 const useButton = <TVariants,>(
-  props?: UseButton.ButtonPropsOptions<TVariants>
-): [UseButton.ButtonProps, UseButton.ButtonPropsMetadata] => {
+  props?: ButtonPropsOptions<TVariants>
+): [ButtonProps, ButtonPropsMetadata] => {
   let {
     disabled = undefined,
     href,
@@ -22,14 +29,7 @@ const useButton = <TVariants,>(
     className: _className = "",
     onClick,
   } = props || {};
-  /**
-   * Функция handleClick обрабатывает события щелчка и клавиатуры, предотвращая поведение по умолчанию
-   * и останавливая распространение, если элемент отключен.
-   * @param {React.MouseEvent | React.KeyboardEvent} event - Параметр события имеет тип
-   * React.MouseEvent или React.KeyboardEvent. Он представляет событие, которое вызвало событие щелчка
-   * или клавиатуры.
-   * @returns ничего (не определено).
-   */
+
   const handleClick = (event: React.MouseEvent | React.KeyboardEvent) => {
     if (disabled || (tagName === "a" && isTrivialHref(href))) {
       event.preventDefault();
@@ -43,12 +43,6 @@ const useButton = <TVariants,>(
     onClick?.(event);
   };
 
-  /**
-   * Функция handleKeyDown проверяет, является ли нажатая клавиша пробелом, и если да, предотвращает
-   * поведение по умолчанию и вызывает функцию handleClick.
-   * @param event - Параметр события — это объект React.KeyboardEvent, который представляет
-   * произошедшее событие клавиатуры. Он содержит информацию о событии, например о нажатой клавише.
-   */
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === " ") {
       event.preventDefault();
@@ -56,9 +50,6 @@ const useButton = <TVariants,>(
     }
   };
 
-  /* Блок кода проверяет, равно ли свойство tagName «a» (указывая, что кнопка является тегом привязки).
-  Если это так, это гарантирует наличие реквизита `href`. Если свойство `href` не указано, ему
-  присваивается значение по умолчанию «#». */
   if (tagName === "a") {
     href ||= "#";
     if (disabled) {

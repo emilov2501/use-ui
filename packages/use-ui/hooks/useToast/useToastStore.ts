@@ -1,9 +1,9 @@
-import { ToastProps, UseToastState } from "./useToast.types";
+import type { ToastProps, ToastState } from "@/types/toast";
 
 let HIDE_TOAST_AFTER = 5000;
 let toastTimeoutId: null | ReturnType<typeof setTimeout>;
 
-let state: UseToastState = {
+let state: ToastState = {
   show: false,
   props: {},
 };

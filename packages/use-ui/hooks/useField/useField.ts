@@ -1,13 +1,23 @@
+import type {
+  FieldProps,
+  FieldPropsMetadata,
+  FieldPropsOptions,
+} from "@/types/field";
 import debounce from "debounce";
 import { ChangeEvent, useCallback, useState } from "react";
-import { UseField } from "./useField.types";
 
-/* Функция useField — это специальный хук в TypeScript, который используется для создания
-контролируемого поля ввода. В качестве параметров он принимает различные параметры, такие как
-начальное значение, имя, обратный вызов onChange и задержку устранения дребезга. */
+/**
+ * The `useField` function in TypeScript creates a controlled input field with debounced value
+ * updating.
+ * @param {FieldPropsOptions} [props] - The `useField` function takes in an optional `props` parameter
+ * of type `FieldPropsOptions`. This parameter can contain the following properties:
+ * @returns The `useField` function returns an array with two elements. The first element is an object
+ * containing the field props with some modifications and additional properties. The second element is
+ * an object with metadata about the field, specifically indicating that it is an input field.
+ */
 const useField = (
-  props?: UseField.FieldPropsOptions
-): [UseField.FieldProps, UseField.FieldPropsMetadata] => {
+  props?: FieldPropsOptions
+): [FieldProps, FieldPropsMetadata] => {
   const {
     value = "",
     name = undefined,
@@ -19,9 +29,6 @@ const useField = (
   const [_value, _setValue] = useState<string>(() => value);
   const [_debouncedValue, _setDebouncedValue] = useState<string>(() => value);
 
-  /* Строка `const debounced = useDebounceCallback(_onChange, debounceDelay);` использует ловушку
-  `useDebounceCallback` из библиотеки `usehooks-ts` для создания отстранённой версии функции
-  `_onChange`. */
   const debounced = debounce((e) => {
     _setDebouncedValue(e.target.value);
     onChange?.(e);
@@ -31,12 +38,7 @@ const useField = (
     (e: ChangeEvent<HTMLInputElement>) => debounced(e),
     []
   );
-  /**
-   * Функция `_handleChange` — это функция TypeScript, которая обрабатывает событие изменения входного
-   * элемента и соответствующим образом обновляет значение, а также устраняет отскок события.
-   * @param e - React.ChangeEvent<HTMLInputElement> — это тип объекта события, который передается в
-   * функцию обработчика событий. Он представляет событие изменения входного элемента.
-   */
+
   const _handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     _setValue(e.target.value);
     debouncedQuery(e);

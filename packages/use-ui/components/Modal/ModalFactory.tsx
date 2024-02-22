@@ -13,13 +13,13 @@ import storage from "../../hooks/useModal/useModalStore";
 import Modal from "./Modal";
 import "./transition.css";
 
-export type ModalPMrops = {
+export type ModalFactoryProps = {
   className?: string | undefined;
   style?: CSSProperties;
 };
 
-const ModalFactory = forwardRef<HTMLDivElement, ModalPMrops>(
-  (props?: ModalPMrops, nodeRef?) => {
+const ModalFactory = forwardRef<HTMLDivElement, ModalFactoryProps>(
+  (props?: ModalFactoryProps, nodeRef?) => {
     const state = useSyncExternalStore(storage.subscribe, storage.getState);
 
     const currentActiveModal = useMemo(
@@ -44,7 +44,7 @@ const ModalFactory = forwardRef<HTMLDivElement, ModalPMrops>(
 );
 
 const WithCSSTransition = (Component: ForwardRefExoticComponent<any>) => {
-  const ModalTransition = (hocProps: ModalPMrops) => {
+  const ModalTransition = (hocProps: ModalFactoryProps) => {
     const state = useSyncExternalStore(storage.subscribe, storage.getState);
     const nodeRef = useRef(null);
     const modal = useMemo(() => storage.getActiveModal(), [state]);

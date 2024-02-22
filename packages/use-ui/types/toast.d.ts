@@ -1,3 +1,5 @@
+// useToast.types.d.ts
+
 export type ToastVariants = "success" | "error" | "info" | "default";
 export interface ToastProps {
   title: string;
@@ -5,7 +7,7 @@ export interface ToastProps {
   variant?: ToastVariants;
 }
 
-export interface UseToastState {
+export interface ToastState {
   show: boolean;
   props: Partial<ToastProps>;
 }

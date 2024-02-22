@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build:prod": "rimraf dist && node ./scripts/build.prod.mjs && tsc",
-    "build:dev": "node ./scripts/build.dev.mjs && tsc",
+    "build:dev": "rimraf dist && node ./scripts/build.dev.mjs && tsc",
     "test": "jest"
   },
   "bugs": {
@@ -31,11 +31,11 @@
     "./styles.css": "./dist/components/index.css",
     "./hooks": {
       "import": "./dist/hooks/index.js",
-      "types": "./dist/types/hooks/index.d.ts"
+      "types": "./dist/hooks/index.d.ts"
     },
     "./components": {
       "import": "./dist/components/index.js",
-      "types": "./dist/types/components/index.d.ts"
+      "types": "./dist/components/index.d.ts"
     }
   },
   "files": [

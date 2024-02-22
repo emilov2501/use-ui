@@ -1,14 +1,14 @@
 import { wait } from "@/lib/helpers";
+import type { BottomNavigationBar, ModalStore } from "@/types/modal";
 import cls from "classnames";
 import React, { HTMLProps, forwardRef, useRef } from "react";
 import { useOnClickOutside } from "usehooks-ts";
-import { UseModal } from "../../hooks/useModal/useModal.types";
 import storage, { DELAY } from "../../hooks/useModal/useModalStore";
-import { ModalPMrops } from "./ModalFactory";
+import type { ModalFactoryProps } from "./ModalFactory";
 import style from "./modal.module.css";
 
-interface Props extends HTMLProps<HTMLDivElement>, ModalPMrops {
-  currentModal: UseModal.Store.ModalData;
+interface Props extends HTMLProps<HTMLDivElement>, ModalFactoryProps {
+  currentModal: ModalStore.ModalData;
 }
 
 const Modal = forwardRef<HTMLDivElement, Props>(
@@ -74,9 +74,7 @@ function buildHeader(
   );
 }
 
-function buildBottomNavigationBar(
-  bottomNavigationBar: UseModal.BottomNavigationBar
-) {
+function buildBottomNavigationBar(bottomNavigationBar: BottomNavigationBar) {
   return (
     <div
       style={{
