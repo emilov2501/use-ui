@@ -12,35 +12,69 @@
 }
 
 .modal {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: #fff;
-  border-radius: 8px;
-  min-height: 50vh;
-  padding: 30px;
+  padding: 15px;
   box-shadow: 0px 3px 6px #00000029;
   overflow-y: auto;
   max-height: calc(100vh - 100px);
 }
 
+.wrapper {
+  margin-inline: 15px;
+  width: 100%;
+}
+
 .xxs {
-  width: 30vh;
+  width: 100%;
   min-height: 10vh;
 }
 
 .xs {
-  width: 30vh;
+  width: 100%;
   min-height: 20vh;
 }
 
 .sm {
-  width: 50vh;
+  width: 100%;
   min-height: 50vh;
 }
 
 .lg {
-  width: 70vh;
+  width: 100%;
   min-height: 70vh;
+}
+
+@media (min-width: 700px) {
+  .xxs {
+    width: 30vh;
+    min-height: 10vh;
+  }
+
+  .xs {
+    width: 30vh;
+    min-height: 20vh;
+  }
+
+  .sm {
+    width: 50vh;
+    min-height: 50vh;
+  }
+
+  .lg {
+    width: 70vh;
+    min-height: 70vh;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+
+  .wrapper {
+    width: auto;
+  }
 }
