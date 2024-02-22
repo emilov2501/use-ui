@@ -33,7 +33,7 @@ const ModalFactory = forwardRef<HTMLDivElement, ModalPMrops>(
 
     return createPortal(
       React.createElement(Modal, {
-        key: currentActiveModal.modalName,
+        key: currentActiveModal.modalId,
         currentModal: currentActiveModal,
         ref: nodeRef,
         ...props,
@@ -47,15 +47,11 @@ const WithCSSTransition = (Component: ForwardRefExoticComponent<any>) => {
   const ModalTransition = (hocProps: ModalPMrops) => {
     const state = useSyncExternalStore(storage.subscribe, storage.getState);
     const nodeRef = useRef(null);
-
-    const currentActiveModal = useMemo(
-      () => storage.getActiveModal(),
-      [state.size]
-    );
+    const modal = useMemo(() => storage.getActiveModal(), [state]);
 
     return (
       <CSSTransition
-        in={currentActiveModal && currentActiveModal.active}
+        in={modal && modal.active}
         timeout={300}
         nodeRef={nodeRef}
         classNames="fade"

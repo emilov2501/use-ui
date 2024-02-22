@@ -19,9 +19,9 @@ const Modal = forwardRef<HTMLDivElement, Props>(
     const modalRef = useRef(null);
 
     const {
-      modalName,
       modalProps: {
         size = "sm",
+        title,
         bottomNavigationBar,
         showXMarkIcon,
         allowClickOutside,
@@ -39,13 +39,13 @@ const Modal = forwardRef<HTMLDivElement, Props>(
 
     return (
       <div className={style.container}>
-        <div className={style.wrapper} ref={modalRef}>
+        <div className={style.wrapper} ref={nodeRef}>
           <div
             className={cls(customClassName, style.modal, style[size])}
             style={customStyles}
-            ref={nodeRef}
+            ref={modalRef}
           >
-            {buildHeader(modalName, handleClose, showXMarkIcon)}
+            {title && buildHeader(title, handleClose, showXMarkIcon)}
             <div className={cls(style.content, "Modal_content")}>
               {props.content}
             </div>
@@ -58,13 +58,13 @@ const Modal = forwardRef<HTMLDivElement, Props>(
   }
 );
 function buildHeader(
-  modalName: String,
+  title: String,
   handleClose: Noop,
   showXMarkIcon: boolean = true
 ) {
   return (
     <div className={cls(style.header, "Modal_header")}>
-      <h3 className={cls(style.heading, "Modal_heading")}>{modalName}</h3>
+      <h3 className={cls(style.heading, "Modal_heading")}>{title}</h3>
       {showXMarkIcon && (
         <span className={cls(style.xMark, "Modal_xMark")} onClick={handleClose}>
           &#10005;

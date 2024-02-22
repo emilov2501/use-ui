@@ -16,8 +16,9 @@ export declare namespace UseModal {
     items: Array<ReactNode>;
   }
   export namespace Store {
-    export type ModalName = string;
+    export type ModalId = string;
     export interface ModalProps {
+      title?: string;
       allowClickOutside?: boolean;
       showXMarkIcon?: boolean;
       content?: React.ReactNode;
@@ -28,7 +29,7 @@ export declare namespace UseModal {
     export interface ModalData {
       active: boolean;
       modalProps: ModalProps;
-      modalName: ModalName;
+      modalId: ModalId;
     }
 
     export type ModalState = Map<string, ModalData>;
