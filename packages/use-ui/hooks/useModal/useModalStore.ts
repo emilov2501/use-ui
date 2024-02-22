@@ -1,4 +1,5 @@
 import { wait } from "../../lib/helpers";
+import { UseModal } from "./useModal.types";
 
 export const DELAY = 200;
 

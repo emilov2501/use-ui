@@ -1,5 +1,7 @@
+import { ReactNode } from "react";
+
 // useModalTypes.d.ts
-declare namespace UseModal {
+export declare namespace UseModal {
   export type ModalSize = "xxs" | "xs" | "sm" | "lg";
   export type ButtonColor =
     | "success"
@@ -7,17 +9,20 @@ declare namespace UseModal {
     | "text"
     | "delete"
     | "warning";
-
+  export interface BottomNavigationBar {
+    justifyBetween?: boolean | undefined;
+    alignCenter?: boolean | undefined;
+    gap?: number | undefined;
+    items: Array<ReactNode>;
+  }
   export namespace Store {
     export type ModalName = string;
     export interface ModalProps {
+      allowClickOutside?: boolean;
+      showXMarkIcon?: boolean;
       content?: React.ReactNode;
       size?: ModalSize;
-      buttons?: Array<{
-        label: String;
-        color: ButtonColor;
-        onClick: Noop;
-      }>;
+      bottomNavigationBar?: BottomNavigationBar;
     }
 
     export interface ModalData {

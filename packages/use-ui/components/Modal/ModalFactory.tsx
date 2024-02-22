@@ -1,5 +1,6 @@
 import compose from "compose-function";
 import React, {
+  CSSProperties,
   ForwardRefExoticComponent,
   forwardRef,
   useMemo,
@@ -12,13 +13,13 @@ import storage from "../../hooks/useModal/useModalStore";
 import Modal from "./Modal";
 import "./transition.css";
 
-type ModalPMrops = {
+export type ModalPMrops = {
   className?: string | undefined;
+  style?: CSSProperties;
 };
 
-const ModalFactory = forwardRef<HTMLDivElement>(
+const ModalFactory = forwardRef<HTMLDivElement, ModalPMrops>(
   (props?: ModalPMrops, nodeRef?) => {
-    const { className } = props || {};
     const state = useSyncExternalStore(storage.subscribe, storage.getState);
 
     const currentActiveModal = useMemo(
@@ -35,7 +36,7 @@ const ModalFactory = forwardRef<HTMLDivElement>(
         key: currentActiveModal.modalName,
         currentModal: currentActiveModal,
         ref: nodeRef,
-        className,
+        ...props,
       }),
       document.body
     );
@@ -43,7 +44,7 @@ const ModalFactory = forwardRef<HTMLDivElement>(
 );
 
 const WithCSSTransition = (Component: ForwardRefExoticComponent<any>) => {
-  const ModalTransition = () => {
+  const ModalTransition = (hocProps: ModalPMrops) => {
     const state = useSyncExternalStore(storage.subscribe, storage.getState);
     const nodeRef = useRef(null);
 
@@ -60,7 +61,7 @@ const WithCSSTransition = (Component: ForwardRefExoticComponent<any>) => {
         classNames="fade"
         unmountOnExit
       >
-        <Component ref={nodeRef} />
+        <Component ref={nodeRef} {...hocProps} />
       </CSSTransition>
     );
   };
