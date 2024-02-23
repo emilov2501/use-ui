@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/emilov2501/use-ui/compare/v1.2.8...v1.3.0) (2024-02-23)
+
+
+### Bug Fixes
+
+* **useModal:** fix modal statement ([4d488e1](https://github.com/emilov2501/use-ui/commit/4d488e102734bd33143562bfd6e33e669c1689f8))
+* **useModal:** fix modal types ([e37539c](https://github.com/emilov2501/use-ui/commit/e37539cc8f7cc6da6b4fbbce44b83790883141f9))
+* **useModal:** fix styles view ([15f8383](https://github.com/emilov2501/use-ui/commit/15f8383c40c7386d3e483d9b6e79e8b0088d4824))
+
+
+### Features
+
+* **useModal:** :art: perform useModal ([f9255df](https://github.com/emilov2501/use-ui/commit/f9255df7db3de0044b89e96cc5d37cfa82a2667a))
+* **useModal:** add transition group for modal fadeIn ([67993eb](https://github.com/emilov2501/use-ui/commit/67993ebb1a3090f498a5155d81cc22dc299d0964))
+
+
+
+
+
 ## [1.2.8](https://github.com/emilov2501/use-ui/compare/v1.2.7...v1.2.8) (2024-02-21)
 
 
