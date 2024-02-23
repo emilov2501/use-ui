@@ -1,4 +1,3 @@
-import { useMemo, useSyncExternalStore } from "react";
 import storage, { DELAY } from "./useModalStore";
 
 /**
@@ -18,20 +17,15 @@ type ModalActions = {
   open: typeof storage.open;
   close: typeof storage.close;
   timeout: number;
-  hasModal: boolean | undefined;
 };
 
 type UseModalHookResult = ModalActions;
 
 const useModal = (): UseModalHookResult => {
-  const state = useSyncExternalStore(storage.subscribe, storage.getState);
-  const modal = useMemo(() => storage.getActiveModal(), [state]);
-
   return {
     open: storage.open,
     close: storage.close,
     timeout: DELAY,
-    hasModal: modal && modal.active,
   };
 };
 

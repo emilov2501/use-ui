@@ -2,24 +2,39 @@ import { useButton, useField, useModal, useToast } from "useui-ts/hooks";
 
 function App() {
   const modal = useModal();
-  const [{ debouncedValue, ...fieldProps }, { Field }] = useField();
+  const [{ ...fieldProps }, { Field }] = useField();
 
   const toast = useToast();
+
+  const [confirmProps, { Button: ConfirmButton }] = useButton({
+    onClick: () =>
+      modal.open("confirm-modal", {
+        title: "Confirm",
+        size: "xs",
+        content: (
+          <button onClick={() => modal.close("confirm-modal")}>Close</button>
+        ),
+      }),
+  });
+
   const [sendProps, { Button: SendButton }] = useButton({
     onClick: () =>
       modal.open("second-modal", {
         title: "hello 2",
+        size: "sm",
         content: (
-          <button onClick={() => modal.close("second-modal")}>Close</button>
+          <>
+            <button onClick={() => modal.close("second-modal")}>Close</button>
+            <ConfirmButton {...confirmProps}>Confirm</ConfirmButton>
+          </>
         ),
       }),
   });
   const [btnProps, { Button }] = useButton({
     onClick: () =>
       modal.open("first-modal", {
-        size: "sm",
+        size: "lg",
         title: "hello",
-        allowClickOutside: true,
         content: (
           <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt

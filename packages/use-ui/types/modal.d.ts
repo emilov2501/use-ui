@@ -13,7 +13,6 @@ export interface BottomNavigationBar {
 export namespace ModalStore {
   export interface ModalProps {
     title?: string;
-    allowClickOutside?: boolean;
     showXMarkIcon?: boolean;
     content?: React.ReactNode;
     size?: ModalSize;
@@ -21,7 +20,6 @@ export namespace ModalStore {
   }
 
   export interface ModalData {
-    active: boolean;
     modalProps: ModalProps;
     modalId: ModalId;
   }

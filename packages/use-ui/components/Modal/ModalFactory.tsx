@@ -1,14 +1,11 @@
-import compose from "compose-function";
 import React, {
   CSSProperties,
-  ForwardRefExoticComponent,
-  forwardRef,
+  createRef,
   useMemo,
-  useRef,
   useSyncExternalStore,
 } from "react";
 import { createPortal } from "react-dom";
-import { CSSTransition } from "react-transition-group";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import storage from "../../hooks/useModal/useModalStore";
 import Modal from "./Modal";
 import "./transition.css";
@@ -18,51 +15,38 @@ export type ModalFactoryProps = {
   style?: CSSProperties;
 };
 
-const ModalFactory = forwardRef<HTMLDivElement, ModalFactoryProps>(
-  (props?: ModalFactoryProps, nodeRef?) => {
-    const state = useSyncExternalStore(storage.subscribe, storage.getState);
+const ModalFactory = (props?: ModalFactoryProps) => {
+  const state = useSyncExternalStore(storage.subscribe, storage.getState);
 
-    const currentActiveModal = useMemo(
-      () => storage.getActiveModal(),
-      [state.size]
-    );
+  const items = useMemo(
+    () =>
+      [...state.values()].map((item) => ({
+        ...item,
+        nodeRef: createRef<HTMLDivElement>(),
+      })),
+    [state.size],
+  );
 
-    if (!currentActiveModal) {
-      return React.createElement(React.Fragment, null);
-    }
-
-    return createPortal(
-      React.createElement(Modal, {
-        key: currentActiveModal.modalId,
-        currentModal: currentActiveModal,
-        ref: nodeRef,
-        ...props,
-      }),
-      document.body
-    );
-  }
-);
-
-const WithCSSTransition = (Component: ForwardRefExoticComponent<any>) => {
-  const ModalTransition = (hocProps: ModalFactoryProps) => {
-    const state = useSyncExternalStore(storage.subscribe, storage.getState);
-    const nodeRef = useRef(null);
-    const modal = useMemo(() => storage.getActiveModal(), [state]);
-
-    return (
-      <CSSTransition
-        in={modal && modal.active}
-        timeout={300}
-        nodeRef={nodeRef}
-        classNames="fade"
-        unmountOnExit
-      >
-        <Component ref={nodeRef} {...hocProps} />
-      </CSSTransition>
-    );
-  };
-
-  return ModalTransition;
+  return createPortal(
+    <TransitionGroup>
+      {items.map((modal) => (
+        <CSSTransition
+          key={modal.modalId}
+          nodeRef={modal.nodeRef}
+          timeout={300}
+          classNames="fade"
+        >
+          <Modal
+            ref={modal.nodeRef}
+            id={modal.modalId}
+            {...modal.modalProps}
+            {...props}
+          />
+        </CSSTransition>
+      ))}
+    </TransitionGroup>,
+    document.body,
+  );
 };
 
-export default compose(WithCSSTransition)(ModalFactory);
+export default ModalFactory;

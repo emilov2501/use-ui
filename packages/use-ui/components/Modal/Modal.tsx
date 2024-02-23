@@ -1,41 +1,35 @@
-import { wait } from "@/lib/helpers";
-import type { BottomNavigationBar, ModalStore } from "@/types/modal";
+import type {
+  BottomNavigationBar,
+  ModalId,
+  ModalSize,
+  ModalStore,
+} from "@/types/modal";
 import cls from "classnames";
-import React, { HTMLProps, forwardRef, useRef } from "react";
-import { useOnClickOutside } from "usehooks-ts";
-import storage, { DELAY } from "../../hooks/useModal/useModalStore";
+import React, { forwardRef } from "react";
+import storage from "../../hooks/useModal/useModalStore";
 import type { ModalFactoryProps } from "./ModalFactory";
 import style from "./modal.module.css";
 
-interface Props extends HTMLProps<HTMLDivElement>, ModalFactoryProps {
-  currentModal: ModalStore.ModalData;
+interface Props extends ModalFactoryProps, ModalStore.ModalProps {
+  size?: ModalSize;
+  id: ModalId;
 }
 
 const Modal = forwardRef<HTMLDivElement, Props>(
   (
-    { currentModal, style: customStyles, className: customClassName }: Props,
-    nodeRef
+    {
+      id,
+      size = "sm",
+      title,
+      bottomNavigationBar,
+      showXMarkIcon,
+      style: customStyles,
+      className: customClassName,
+      ...props
+    }: Props,
+    nodeRef,
   ) => {
-    const modalRef = useRef(null);
-
-    const {
-      modalProps: {
-        size = "sm",
-        title,
-        bottomNavigationBar,
-        showXMarkIcon,
-        allowClickOutside,
-        ...props
-      },
-    } = currentModal;
-
-    const handleClose = async () => {
-      storage.disableAll();
-      await wait(DELAY);
-      storage.clear();
-    };
-
-    useOnClickOutside(modalRef, allowClickOutside ? handleClose : () => ({}));
+    const handleClose = () => storage.close(id);
 
     return (
       <div className={style.container}>
@@ -43,7 +37,6 @@ const Modal = forwardRef<HTMLDivElement, Props>(
           <div
             className={cls(customClassName, style.modal, style[size])}
             style={customStyles}
-            ref={modalRef}
           >
             {title && buildHeader(title, handleClose, showXMarkIcon)}
             <div className={cls(style.content, "Modal_content")}>
@@ -55,12 +48,13 @@ const Modal = forwardRef<HTMLDivElement, Props>(
         </div>
       </div>
     );
-  }
+  },
 );
+
 function buildHeader(
   title: String,
   handleClose: Noop,
-  showXMarkIcon: boolean = true
+  showXMarkIcon: boolean = true,
 ) {
   return (
     <div className={cls(style.header, "Modal_header")}>
