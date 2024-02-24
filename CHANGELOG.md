@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/emilov2501/use-ui/compare/v1.3.3...v1.3.4) (2024-02-24)
+
+
+### Bug Fixes
+
+* **module:** fix hooks metadata's ([2abfc0c](https://github.com/emilov2501/use-ui/commit/2abfc0ca3b0ae31e58cae24bbc5fba694658133c))
+
+
+
+
+
 ## [1.3.3](https://github.com/emilov2501/use-ui/compare/v1.3.2...v1.3.3) (2024-02-24)
 
 
