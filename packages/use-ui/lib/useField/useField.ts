@@ -1,10 +1,10 @@
+import debounce from "debounce";
+import { ChangeEvent, useCallback, useState } from "react";
 import type {
   FieldProps,
   FieldPropsMetadata,
   FieldPropsOptions,
-} from "@/types/field";
-import debounce from "debounce";
-import { ChangeEvent, useCallback, useState } from "react";
+} from "../interfaces";
 
 /**
  * The `useField` function in TypeScript creates a controlled input field with debounced value

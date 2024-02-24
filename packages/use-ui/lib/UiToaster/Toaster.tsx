@@ -2,7 +2,7 @@ import cls from "classnames";
 import compose from "compose-function";
 import React, { ForwardRefExoticComponent, useSyncExternalStore } from "react";
 import { CSSTransition } from "react-transition-group";
-import storage from "../../hooks/useToast/useToastStore";
+import { storage } from "../useToast/useToast";
 import "./animation.css";
 import style from "./toaster.module.css";
 

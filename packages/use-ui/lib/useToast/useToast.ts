@@ -1,4 +1,4 @@
-import type { ToastProps, ToastState } from "@/types/toast";
+import type { Noop, ToastProps, ToastState } from "../interfaces";
 
 let HIDE_TOAST_AFTER = 5000;
 let toastTimeoutId: null | ReturnType<typeof setTimeout>;
@@ -71,7 +71,7 @@ const toast = (props: ToastProps) => {
 
 const getState = () => state;
 
-const storage = {
+export const storage = {
   getState,
   subscribe,
   show,
@@ -79,4 +79,4 @@ const storage = {
   toast,
 };
 
-export default storage;
+export const useToast = () => storage.toast;

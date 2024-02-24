@@ -6,9 +6,9 @@ import React, {
 } from "react";
 import { createPortal } from "react-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import storage from "../../hooks/useModal/useModalStore";
+import { storage } from "../useModal/useModal";
 import Modal from "./Modal";
-import "./transition.css";
+import "./anim.css";
 
 export type ModalFactoryProps = {
   className?: string | undefined;
@@ -24,7 +24,7 @@ const ModalFactory = (props?: ModalFactoryProps) => {
         ...item,
         nodeRef: createRef<HTMLDivElement>(),
       })),
-    [state.size],
+    [state.size]
   );
 
   return createPortal(
@@ -45,7 +45,7 @@ const ModalFactory = (props?: ModalFactoryProps) => {
         </CSSTransition>
       ))}
     </TransitionGroup>,
-    document.body,
+    document.body
   );
 };
 

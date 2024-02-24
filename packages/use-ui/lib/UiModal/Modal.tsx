@@ -1,12 +1,13 @@
+import cls from "classnames";
+import React, { forwardRef } from "react";
 import type {
   BottomNavigationBar,
   ModalId,
   ModalSize,
   ModalStore,
-} from "@/types/modal";
-import cls from "classnames";
-import React, { forwardRef } from "react";
-import storage from "../../hooks/useModal/useModalStore";
+  Noop,
+} from "../interfaces";
+import { storage } from "../useModal/useModal";
 import type { ModalFactoryProps } from "./ModalFactory";
 import style from "./modal.module.css";
 
@@ -27,7 +28,7 @@ const Modal = forwardRef<HTMLDivElement, Props>(
       className: customClassName,
       ...props
     }: Props,
-    nodeRef,
+    nodeRef
   ) => {
     const handleClose = () => storage.close(id);
 
@@ -48,13 +49,13 @@ const Modal = forwardRef<HTMLDivElement, Props>(
         </div>
       </div>
     );
-  },
+  }
 );
 
 function buildHeader(
   title: String,
   handleClose: Noop,
-  showXMarkIcon: boolean = true,
+  showXMarkIcon: boolean = true
 ) {
   return (
     <div className={cls(style.header, "Modal_header")}>

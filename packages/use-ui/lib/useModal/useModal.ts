@@ -1,4 +1,4 @@
-import { ModalId, ModalStore } from "@/types/modal";
+import type { ModalId, ModalStore, Noop } from "../interfaces";
 
 export const DELAY = 200;
 
@@ -33,7 +33,7 @@ const open = async (modalId: ModalId, modalProps: ModalStore.ModalProps) => {
 const close = async (modalId: ModalId) => {
   if (!state.has(modalId)) {
     throw new Error(
-      "Modal ID is missing. Make sure, you are using this modal inside the Map.",
+      "Modal ID is missing. Make sure, you are using this modal inside the Map."
     );
   }
 
@@ -51,7 +51,7 @@ const close = async (modalId: ModalId) => {
 const getState = () => state;
 const getModalList = () => [...getState().values()];
 
-const storage = {
+export const storage = {
   subscribe,
   getState,
   getModalList,
@@ -60,4 +60,16 @@ const storage = {
   close,
 };
 
-export default storage;
+type Actions = {
+  open: typeof storage.open;
+  close: typeof storage.close;
+};
+
+type UseModalHookResult = Actions;
+
+export const useModal = (): UseModalHookResult => {
+  return {
+    open: storage.open,
+    close: storage.close,
+  };
+};

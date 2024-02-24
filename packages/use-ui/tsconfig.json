@@ -7,16 +7,9 @@
     "strict": true,
     "skipLibCheck": true,
     "jsx": "react",
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "sourceMap": true,
-    "outDir": "dist",
     "moduleResolution": "Bundler",
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "paths": {
-      "@/*": ["./*"]
-    }
+    "resolveJsonModule": true
   },
-  "include": ["."]
+  "include": ["**/*.ts", "**/*.tsx", "lib/index.ts"]
 }

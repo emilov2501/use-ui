@@ -1,10 +1,10 @@
+import cls from "classnames";
+import * as React from "react";
 import type {
   ButtonProps,
   ButtonPropsMetadata,
   ButtonPropsOptions,
-} from "@/types/button";
-import cls from "classnames";
-import * as React from "react";
+} from "../interfaces";
 
 /**
  * The `useButton` function in TypeScript React returns button props and metadata based on the provided

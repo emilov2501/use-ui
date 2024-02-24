@@ -9,6 +9,9 @@
     "react",
     "hooks"
   ],
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "style": "./dist/styles.css",
   "author": {
     "name": "Eldiyar Temir",
     "email": "emilov2501@gmail.com"
@@ -20,23 +23,12 @@
     "url": "git+https://github.com/emilov2501/use-ui.git"
   },
   "scripts": {
-    "build:prod": "rimraf dist && node ./scripts/build.prod.mjs && tsc",
+    "build:prod": "rimraf dist && vite build",
     "build:dev": "rimraf dist && node ./scripts/build.dev.mjs && tsc",
     "test": "jest"
   },
   "bugs": {
     "url": "https://github.com/emilov2501/use-ui/issues"
-  },
-  "exports": {
-    "./styles.css": "./dist/components/index.css",
-    "./hooks": {
-      "import": "./dist/hooks/index.js",
-      "types": "./dist/hooks/index.d.ts"
-    },
-    "./components": {
-      "import": "./dist/components/index.js",
-      "types": "./dist/components/index.d.ts"
-    }
   },
   "files": [
     "dist",
@@ -56,6 +48,7 @@
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@types/react-transition-group": "^4.4.10",
+    "@vitejs/plugin-react": "^4.2.1",
     "classnames": "^2.5.1",
     "compose-function": "^3.0.3",
     "debounce": "^2.0.0",
@@ -68,9 +61,14 @@
     "react-dom": "^18.2.0",
     "react-transition-group": "^4.4.5",
     "rimraf": "^5.0.5",
+    "terser": "^5.28.1",
     "ts-jest": "^29.1.2",
     "typescript": "^5.3.3",
-    "usehooks-ts": "^2.14.0"
+    "usehooks-ts": "^2.14.0",
+    "vite": "^5.1.4",
+    "vite-plugin-dts": "^3.7.3",
+    "vite-plugin-lib-inject-css": "^2.0.0",
+    "vite-plugin-static-copy": "^1.0.1"
   },
   "peerDependencies": {
     "react": "^18",

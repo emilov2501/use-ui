@@ -1,4 +1,4 @@
-import { useButton, useField, useModal, useToast } from "useui-ts/hooks";
+import { useButton, useField, useModal, useToast } from "useui-ts";
 
 function App() {
   const modal = useModal();
