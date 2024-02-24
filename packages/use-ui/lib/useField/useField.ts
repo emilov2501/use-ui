@@ -1,8 +1,8 @@
 import debounce from "debounce";
 import { ChangeEvent, useCallback, useState } from "react";
 import type {
+  FieldMetadata,
   FieldProps,
-  FieldPropsMetadata,
   FieldPropsOptions,
 } from "../interfaces";
 
@@ -17,7 +17,7 @@ import type {
  */
 const useField = (
   props?: FieldPropsOptions
-): [FieldProps, FieldPropsMetadata] => {
+): [FieldProps, keyof FieldMetadata] => {
   const {
     value = "",
     name = undefined,
@@ -55,7 +55,7 @@ const useField = (
       onChange: _handleChange,
       ...props,
     },
-    { Field: "input" },
+    "input",
   ];
 };
 

@@ -1,5 +1,6 @@
 // useButton.types.d.ts
 export type ButtonType = "button" | "reset" | "submit";
+export type ButtonMetadata = Pick<JSX.IntrinsicElements, "button" | "a">;
 
 export interface AnchorOptions {
   href?: string;
@@ -16,7 +17,7 @@ export interface ButtonPropsOptions<TVariants> extends AnchorOptions {
   className?: string;
   onClick?: React.EventHandler<React.MouseEvent | React.KeyboardEvent>;
   tabIndex?: number;
-  tagName?: keyof JSX.IntrinsicElements;
+  tagName?: keyof ButtonMetadata;
   role?: React.AriaRole | undefined;
 }
 
@@ -33,8 +34,4 @@ export interface ButtonProps {
   onClick?: (event: React.MouseEvent | React.KeyboardEvent) => void;
   onKeyDown?: (event: React.KeyboardEvent) => void;
   className?: string | undefined;
-}
-
-export interface ButtonPropsMetadata {
-  Button: React.ElementType;
 }

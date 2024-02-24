@@ -2,6 +2,8 @@
 import { ChangeEvent, HTMLProps } from "react";
 
 type TField = Pick<HTMLProps<HTMLInputElement>, "disabled" | "aria-disabled">;
+export type FieldMetadata = Pick<JSX.IntrinsicElements, "input">;
+
 export interface FieldPropsOptions extends TField {
   debounceDelay?: number;
   value?: undefined | string;
@@ -24,8 +26,4 @@ export interface FieldProps {
   "aria-disabled:"?: true | undefined;
   disabled: boolean | undefined;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-}
-
-export interface FieldPropsMetadata {
-  Field: React.ElementType;
 }

@@ -1,8 +1,8 @@
 import cls from "classnames";
 import * as React from "react";
 import type {
+  ButtonMetadata,
   ButtonProps,
-  ButtonPropsMetadata,
   ButtonPropsOptions,
 } from "../interfaces";
 
@@ -15,7 +15,7 @@ import type {
  */
 const useButton = <TVariants,>(
   props?: ButtonPropsOptions<TVariants>
-): [ButtonProps, ButtonPropsMetadata] => {
+): [ButtonProps, keyof ButtonMetadata] => {
   let {
     disabled = undefined,
     href,
@@ -23,7 +23,7 @@ const useButton = <TVariants,>(
     type = "button",
     form,
     tabIndex,
-    tagName,
+    tagName = "button",
     prefix,
     variant,
     className: _className = "",
@@ -82,7 +82,7 @@ const useButton = <TVariants,>(
       onKeyDown: handleKeyDown,
       className,
     },
-    { Button: tagName || "button" },
+    tagName,
   ];
 };
 
