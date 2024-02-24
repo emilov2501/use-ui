@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/emilov2501/use-ui/compare/v1.3.1...v1.3.2) (2024-02-24)
+
+
+### Bug Fixes
+
+* **app:** fix chunk minifying ([799d9bf](https://github.com/emilov2501/use-ui/commit/799d9bf558f2918ccd0afbbdf064fff0659e3c62))
+
+
+
+
+
 ## [1.3.1](https://github.com/emilov2501/use-ui/compare/v1.3.0...v1.3.1) (2024-02-24)
 
 **Note:** Version bump only for package root
