@@ -12,10 +12,8 @@ import { useEffect, useState } from "react";
  * hooks to manage the state and update it based on changes to the media query.
  */
 function useMediaQuery(query: string) {
-  // Проверяем, выполняется ли код в среде браузера
   const isClient = typeof window === "object";
 
-  // Состояние для хранения текущего соответствия медиа-запросу
   const [matches, setMatches] = useState<boolean>(false);
 
   useEffect(() => {
@@ -25,18 +23,14 @@ function useMediaQuery(query: string) {
 
     const matchMedia: MediaQueryList = window.matchMedia(query);
 
-    // Обновляем состояние, если соответствие медиа-запросу изменяется
     const handleChange = (event: MediaQueryListEvent): void => {
       setMatches(event.matches);
     };
 
-    // Устанавливаем начальное значение
     setMatches(matchMedia.matches);
 
-    // Подписываемся на изменения медиа-запроса
     matchMedia.addEventListener("change", handleChange);
 
-    // Очистка подписки при размонтировании компонента
     return () => {
       matchMedia.removeEventListener("change", handleChange);
     };

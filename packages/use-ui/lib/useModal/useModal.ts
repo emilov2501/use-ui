@@ -49,12 +49,10 @@ const close = async (modalId: ModalId) => {
 };
 
 const getState = () => state;
-const getModalList = () => [...getState().values()];
 
 export const storage = {
   subscribe,
   getState,
-  getModalList,
   open,
   clear,
   close,

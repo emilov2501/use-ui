@@ -15,14 +15,11 @@ const subscribe = (callback: Noop): Noop => {
   return () => listeners.delete(callback);
 };
 
-/**
- * Функция notify вызывает всех зарегистрированных прослушивателей.
- */
 const notify = () => {
   listeners.forEach((callback) => callback());
 };
 
-const setProps = (props: ToastProps) => {
+const pushProps = (props: ToastProps) => {
   let copy = Object.assign({}, state);
   copy.props = props;
 
@@ -46,21 +43,12 @@ const show = () => {
   notify();
 };
 
-/**
- * Функция «toast» в TypeScript скрывает текущее всплывающее уведомление, устанавливает новые свойства,
- * ждет определенное время перед отображением всплывающего уведомления, а затем скрывает его по
- * истечении другого указанного времени.
- * @param {ToastProps} props - Параметр props в функции toast, скорее всего, содержит свойства или
- * конфигурацию всплывающего уведомления, которое будет отображаться. Эти свойства могут включать в
- * себя такие вещи, как отображаемое сообщение, продолжительность отображения всплывающего уведомления,
- * тип всплывающего уведомления (успех, ошибка, предупреждение и т. д.).
- */
 const toast = (props: ToastProps) => {
   if (toastTimeoutId !== null) {
     clearTimeout(toastTimeoutId);
   }
 
-  setProps(props);
+  pushProps(props);
   show();
 
   toastTimeoutId = setTimeout(() => {
