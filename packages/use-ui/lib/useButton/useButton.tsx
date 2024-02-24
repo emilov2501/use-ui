@@ -1,4 +1,3 @@
-import cls from "classnames";
 import * as React from "react";
 import type {
   ButtonMetadata,
@@ -13,8 +12,8 @@ import type {
  * contains various options for configuring the button component. These options include:
  * @returns The `useButton` function returns an array with two elements:
  */
-const useButton = <TVariants,>(
-  props?: ButtonPropsOptions<TVariants>
+const useButton = (
+  props?: ButtonPropsOptions
 ): [ButtonProps, keyof ButtonMetadata] => {
   let {
     disabled = undefined,
@@ -24,9 +23,6 @@ const useButton = <TVariants,>(
     form,
     tabIndex,
     tagName = "button",
-    prefix,
-    variant,
-    className: _className = "",
     onClick,
   } = props || {};
 
@@ -57,18 +53,6 @@ const useButton = <TVariants,>(
     }
   }
 
-  const className = React.useMemo(() => {
-    if (prefix) {
-      return cls(prefix, _className, {
-        [`${prefix}-${variant}`]: prefix && variant,
-      });
-    }
-
-    return cls(_className, {
-      [`${variant}`]: variant,
-    });
-  }, [_className, prefix, variant]);
-
   return [
     {
       type,
@@ -80,7 +64,6 @@ const useButton = <TVariants,>(
       "aria-disabled": !disabled ? undefined : disabled,
       onClick: handleClick,
       onKeyDown: handleKeyDown,
-      className,
     },
     tagName,
   ];

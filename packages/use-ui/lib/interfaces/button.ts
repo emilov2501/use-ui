@@ -1,6 +1,13 @@
-// useButton.types.d.ts
+// button.d.ts
+import { CSSProperties } from "react";
+
 export type ButtonType = "button" | "reset" | "submit";
 export type ButtonMetadata = Pick<JSX.IntrinsicElements, "button" | "a">;
+
+export type ModalFactoryProps = {
+  className?: string | undefined;
+  style?: CSSProperties;
+};
 
 export interface AnchorOptions {
   href?: string;
@@ -8,13 +15,10 @@ export interface AnchorOptions {
   target?: string;
 }
 
-export interface ButtonPropsOptions<TVariants> extends AnchorOptions {
+export interface ButtonPropsOptions extends AnchorOptions {
   type?: ButtonType;
   disabled?: boolean;
   form?: string;
-  variant?: TVariants;
-  prefix?: string;
-  className?: string;
   onClick?: React.EventHandler<React.MouseEvent | React.KeyboardEvent>;
   tabIndex?: number;
   tagName?: keyof ButtonMetadata;

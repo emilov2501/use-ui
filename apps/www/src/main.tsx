@@ -11,6 +11,12 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         borderRadius: "10px",
       }}
     />
-    <Toaster />
+    <Toaster
+      timeout={4000}
+      className="toaster"
+      style={{
+        borderRadius: "0",
+      }}
+    />
   </>
 );

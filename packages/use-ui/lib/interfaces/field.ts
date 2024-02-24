@@ -1,4 +1,4 @@
-// useField.types.d.ts
+// field.d.ts
 import { ChangeEvent, HTMLProps } from "react";
 
 type TField = Pick<HTMLProps<HTMLInputElement>, "disabled" | "aria-disabled">;

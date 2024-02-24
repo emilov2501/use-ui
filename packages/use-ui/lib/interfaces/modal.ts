@@ -1,4 +1,4 @@
-// useModal.types.d.ts
+// modal.d.ts
 import { ReactNode } from "react";
 
 export type ModalId = string;

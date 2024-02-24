@@ -1,9 +1,9 @@
 import type { Noop, ToastProps, ToastState } from "../interfaces";
 
-let HIDE_TOAST_AFTER = 5000;
 let toastTimeoutId: null | ReturnType<typeof setTimeout>;
 
 let state: ToastState = {
+  timeout: null,
   show: false,
   props: {},
 };
@@ -43,18 +43,28 @@ const show = () => {
   notify();
 };
 
+const updateTimeout = (timeout: number) => {
+  let copy = Object.assign({}, state);
+  copy.timeout = timeout;
+
+  state = copy;
+  notify();
+};
+
 const toast = (props: ToastProps) => {
-  if (toastTimeoutId !== null) {
+  if (toastTimeoutId !== null && state.timeout) {
     clearTimeout(toastTimeoutId);
   }
 
   pushProps(props);
   show();
 
-  toastTimeoutId = setTimeout(() => {
-    hide();
-    toastTimeoutId = null;
-  }, HIDE_TOAST_AFTER);
+  if (state.timeout) {
+    toastTimeoutId = setTimeout(() => {
+      hide();
+      toastTimeoutId = null;
+    }, state.timeout);
+  }
 };
 
 const getState = () => state;
@@ -62,9 +72,13 @@ const getState = () => state;
 export const storage = {
   getState,
   subscribe,
+};
+
+export const toastModel = {
+  updateTimeout,
   show,
   hide,
   toast,
 };
 
-export const useToast = () => storage.toast;
+export const useToast = () => toastModel.toast;

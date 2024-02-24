@@ -53,21 +53,24 @@ const getState = () => state;
 export const storage = {
   subscribe,
   getState,
+};
+
+export const modalModel = {
   open,
   clear,
   close,
 };
 
 type Actions = {
-  open: typeof storage.open;
-  close: typeof storage.close;
+  open: typeof modalModel.open;
+  close: typeof modalModel.close;
 };
 
 type UseModalHookResult = Actions;
 
 export const useModal = (): UseModalHookResult => {
   return {
-    open: storage.open,
-    close: storage.close,
+    open: modalModel.open,
+    close: modalModel.close,
   };
 };

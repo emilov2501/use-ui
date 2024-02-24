@@ -109,7 +109,7 @@
   }
 
   .lg {
-    width: 70vh;
+    max-width: 70vh;
     min-height: 70vh;
   }
 

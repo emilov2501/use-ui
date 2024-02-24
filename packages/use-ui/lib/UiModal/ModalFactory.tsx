@@ -1,19 +1,10 @@
-import React, {
-  CSSProperties,
-  createRef,
-  useMemo,
-  useSyncExternalStore,
-} from "react";
+import React, { createRef, useMemo, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { ModalFactoryProps } from "../interfaces";
 import { storage } from "../useModal/useModal";
 import Modal from "./Modal";
 import "./anim.css";
-
-export type ModalFactoryProps = {
-  className?: string | undefined;
-  style?: CSSProperties;
-};
 
 const ModalFactory = (props?: ModalFactoryProps) => {
   const state = useSyncExternalStore(storage.subscribe, storage.getState);

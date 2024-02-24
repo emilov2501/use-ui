@@ -2,13 +2,14 @@ import cls from "classnames";
 import React, { forwardRef } from "react";
 import type {
   BottomNavigationBar,
+  ModalFactoryProps,
   ModalId,
   ModalSize,
   ModalStore,
   Noop,
 } from "../interfaces";
-import { storage } from "../useModal/useModal";
-import type { ModalFactoryProps } from "./ModalFactory";
+import { modalModel } from "../useModal/useModal";
+
 import style from "./modal.module.css";
 
 interface Props extends ModalFactoryProps, ModalStore.ModalProps {
@@ -30,7 +31,7 @@ const Modal = forwardRef<HTMLDivElement, Props>(
     }: Props,
     nodeRef
   ) => {
-    const handleClose = () => storage.close(id);
+    const handleClose = () => modalModel.close(id);
 
     return (
       <div className={style.container}>

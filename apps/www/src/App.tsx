@@ -2,11 +2,11 @@ import { useButton, useField, useModal, useToast } from "useui-ts";
 
 function App() {
   const modal = useModal();
-  const [{ ...fieldProps }, { Field }] = useField();
+  const [{ ...fieldProps }, Field] = useField();
 
   const toast = useToast();
 
-  const [confirmProps, { Button: ConfirmButton }] = useButton({
+  const [confirmProps, ConfirmButton] = useButton({
     onClick: () =>
       modal.open("confirm-modal", {
         title: "Confirm",
@@ -17,7 +17,7 @@ function App() {
       }),
   });
 
-  const [sendProps, { Button: SendButton }] = useButton({
+  const [sendProps, SendButton] = useButton({
     onClick: () =>
       modal.open("second-modal", {
         title: "hello 2",
@@ -30,7 +30,7 @@ function App() {
         ),
       }),
   });
-  const [btnProps, { Button }] = useButton({
+  const [btnProps, Button] = useButton({
     onClick: () =>
       modal.open("first-modal", {
         size: "lg",
@@ -107,12 +107,12 @@ function App() {
       }),
   });
 
-  const [btnProps2, { Button: Two }] = useButton({
+  const [btnProps2, Two] = useButton({
     onClick: () =>
       toast({
         title: "Uh No! Something went wrong",
-        description: "There was a problet with your request",
-        variant: "info",
+
+        variant: "error",
       }),
   });
 
