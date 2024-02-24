@@ -1,6 +1,6 @@
 {
   "name": "useui-ts",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "private": false,
   "description": "React UI hook library, ready to use, written in Typescript.",
   "keywords": [
