@@ -62,7 +62,8 @@ export default defineConfig({
     outDir: "dist",
     target: "esnext",
     cssCodeSplit: true,
-    cssMinify: false,
+    cssMinify: true,
+    minify: true,
     lib: {
       entry: {
         ...hooks,
@@ -85,7 +86,7 @@ function minifyBundles() {
     name: "minifyBundles",
     async generateBundle(options, bundle) {
       for (let key in bundle) {
-        if (bundle[key].type == "chunk" && key.endsWith(".js")) {
+        if (bundle[key].type == "chunk") {
           const minifyCode = await minify(bundle[key].code, {
             sourceMap: false,
             compress: true,
