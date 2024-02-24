@@ -17,7 +17,7 @@
     "email": "emilov2501@gmail.com"
   },
   "license": "ISC",
-  "sideEffects": true,
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emilov2501/use-ui.git"
