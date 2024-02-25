@@ -11,30 +11,33 @@ function App() {
       modal.open("confirm-modal", {
         title: "Confirm",
         size: "xs",
-        content: (
-          <button onClick={() => modal.close("confirm-modal")}>Close</button>
-        ),
+        bottomNavigationBar: {
+          items: [
+            <button onClick={() => modal.close("confirm-modal")}>Close</button>,
+          ],
+        },
       }),
   });
 
   const [sendProps, SendButton] = useButton({
     onClick: () =>
       modal.open("second-modal", {
-        title: "hello 2",
+        title: "Send?",
         size: "sm",
-        content: (
-          <>
-            <button onClick={() => modal.close("second-modal")}>Close</button>
-            <ConfirmButton {...confirmProps}>Confirm</ConfirmButton>
-          </>
-        ),
+        bottomNavigationBar: {
+          justifyBetween: true,
+          items: [
+            <button onClick={() => modal.close("second-modal")}>Close</button>,
+            <ConfirmButton {...confirmProps}>Confirm</ConfirmButton>,
+          ],
+        },
       }),
   });
   const [btnProps, Button] = useButton({
     onClick: () =>
       modal.open("first-modal", {
         size: "lg",
-        title: "hello",
+        title: "Are you sure?",
         content: (
           <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
@@ -101,7 +104,19 @@ function App() {
           justifyBetween: true,
           items: [
             <SendButton {...sendProps}>Send</SendButton>,
-            <button onClick={() => modal.close("first-modal")}>Cancel</button>,
+            <button
+              onClick={() =>
+                toast({
+                  variant: "success",
+                  title:
+                    "Fugit eum quae culpa voluptas a est saepe, itaque repellat eligendi, eligendi eligendi eligendi eligendi eligendi eligendi eligendi eligendi eligendi eligendi eligendi eligendi",
+                  description:
+                    "temporibus sed porro dicta tenetur corrupti, in quos omnis saepe possimus at.",
+                })
+              }
+            >
+              Cancel
+            </button>,
           ],
         },
       }),
@@ -118,9 +133,8 @@ function App() {
 
   return (
     <>
-      <Field {...fieldProps} className="hello" />
-      <Button {...btnProps}>hello</Button>
-      <Two {...btnProps2}>Two</Two>
+      <Button {...btnProps}>Open Modal</Button>
+      <Two {...btnProps2}>Toast</Two>
     </>
   );
 }

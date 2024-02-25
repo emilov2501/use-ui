@@ -1,5 +1,6 @@
 // modal.d.ts
 import { ReactNode } from "react";
+import { Noop } from ".";
 
 export type ModalId = string;
 export type ModalSize = "xxs" | "xs" | "sm" | "lg";
@@ -10,19 +11,24 @@ export interface BottomNavigationBar {
   gap?: number | undefined;
   items: Array<ReactNode>;
 }
-export namespace ModalStore {
-  export interface ModalProps {
-    title?: string;
-    showXMarkIcon?: boolean;
-    content?: React.ReactNode;
-    size?: ModalSize;
-    bottomNavigationBar?: BottomNavigationBar;
-  }
 
-  export interface ModalData {
-    modalProps: ModalProps;
-    modalId: ModalId;
-  }
-
-  export type ModalState = Map<string, ModalData>;
+export interface ModalProps {
+  title?: string;
+  showXMarkIcon?: boolean;
+  content?: React.ReactNode;
+  size?: ModalSize;
+  bottomNavigationBar?: BottomNavigationBar;
 }
+
+export interface ModalData {
+  modalProps: ModalProps;
+  modalId: ModalId;
+}
+
+export interface ModalEvents {
+  onOpen: (id: ModalId, props: ModalProps) => void;
+  onClose: (id: ModalId) => void;
+  onClear: Noop;
+}
+
+export type ModalState = Map<string, ModalData>;

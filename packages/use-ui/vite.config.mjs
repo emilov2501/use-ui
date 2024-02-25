@@ -6,7 +6,7 @@ import { libInjectCss } from "vite-plugin-lib-inject-css";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 const componentFiles = fs
   .readdirSync("./lib")
-  .filter((file) => file.includes("Ui"));
+  .filter((file) => file.includes("App"));
 
 const hookFiles = fs
   .readdirSync("./lib")

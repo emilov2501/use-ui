@@ -5,12 +5,7 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <>
     <App />
-    <Modal
-      className="mymodal"
-      style={{
-        borderRadius: "10px",
-      }}
-    />
+    <Modal className="mymodal" />
     <Toaster
       timeout={4000}
       className="toaster"
