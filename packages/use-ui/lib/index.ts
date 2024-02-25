@@ -6,5 +6,5 @@ export * from "./useModal";
 export * from "./useToast";
 
 // Components
-export * from "./UiModal";
-export * from "./UiToaster";
+export * from "./AppModal";
+export * from "./AppToaster";
