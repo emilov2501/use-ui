@@ -20,7 +20,9 @@
     "labels": {
       "Type: Feature": "Features",
       "Type: Bug": "Bug fixes",
-      "Type: Enhancement": "Enhancements"
+      "Type: Enhancement": "Enhancements",
+      "Type: Chore": "Version",
+      "Type: Refactor": "Refactor"
     }
   }
 }
