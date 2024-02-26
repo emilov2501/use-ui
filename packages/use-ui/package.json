@@ -23,8 +23,7 @@
     "url": "git+https://github.com/emilov2501/use-ui.git"
   },
   "scripts": {
-    "build:prod": "rimraf dist && vite build",
-    "build:dev": "rimraf dist && node ./scripts/build.dev.mjs && tsc",
+    "build": "rimraf dist && vite build",
     "test": "jest"
   },
   "bugs": {

@@ -5,10 +5,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build:prod": "nx run useui-ts:build:prod",
-    "watch:useui-ts": "nx watch --projects=useui-ts -- nx build:prod useui-ts",
+    "build:useui": "nx run useui-ts:build",
     "dev:www": "nx dev www --skip-nx-cache",
-    "release": "lerna publish from-git --no-private",
+    "dev:useui": "nx run useui-ts:dev --skip-nx-cache",
+    "release": "lerna publish from-package --no-private",
     "version": "lerna version --no-private"
   },
   "devDependencies": {

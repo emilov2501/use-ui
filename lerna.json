@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "version": "1.4.0",
+  "version": "independent",
   "npmClient": "pnpm",
   "command": {
     "version": {
@@ -11,9 +11,5 @@
       "npmClient": "npm"
     }
   },
-  "ignoreChanges": [
-    "**/test/**",
-    "**/tests/**",
-    "**/*.md"
-  ]
+  "ignoreChanges": ["*.md", ".test.ts", ".spec.ts", ".stories.ts"]
 }

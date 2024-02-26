@@ -1,6 +1,6 @@
 .fade-enter {
   opacity: 0;
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 .fade-enter-active {
   opacity: 1;
@@ -12,6 +12,6 @@
 }
 .fade-exit-active {
   opacity: 0;
-  transform: scale(0.9);
+  transform: scale(0.95);
   transition: transform 200ms, opacity 200ms;
 }
