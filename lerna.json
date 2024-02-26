@@ -5,11 +5,12 @@
   "command": {
     "version": {
       "allowBranch": "main",
-      "conventionalCommits": true
+      "changelog": true,
+      "conventionalCommits": false
     },
     "publish": {
       "npmClient": "npm"
     }
   },
-  "ignoreChanges": ["*.md", ".test.ts", ".spec.ts", ".stories.ts"]
+  "ignoreChanges": ["*.md", "*.test.ts", "*.spec.ts", "*.stories.ts"]
 }
