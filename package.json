@@ -8,7 +8,7 @@
     "build:prod": "nx run useui-ts:build:prod",
     "watch:useui-ts": "nx watch --projects=useui-ts -- nx build:prod useui-ts",
     "dev:www": "nx dev www --skip-nx-cache",
-    "release": "lerna publish from-package --no-private",
+    "release": "lerna publish from-git --no-private",
     "version": "lerna version --no-private"
   },
   "devDependencies": {

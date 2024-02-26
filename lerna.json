@@ -10,5 +10,10 @@
     "publish": {
       "npmClient": "npm"
     }
-  }
+  },
+  "ignoreChanges": [
+    "**/test/**",
+    "**/tests/**",
+    "**/*.md"
+  ]
 }
