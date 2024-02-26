@@ -1,13 +1,7 @@
 // button.d.ts
-import { CSSProperties } from "react";
 
 export type ButtonType = "button" | "reset" | "submit";
 export type ButtonMetadata = Pick<JSX.IntrinsicElements, "button" | "a">;
-
-export type ModalFactoryProps = {
-  className?: string | undefined;
-  style?: CSSProperties;
-};
 
 export interface AnchorOptions {
   href?: string;

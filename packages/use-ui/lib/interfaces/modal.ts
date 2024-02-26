@@ -1,9 +1,14 @@
 // modal.d.ts
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 import { Noop } from ".";
 
 export type ModalId = string;
 export type ModalSize = "xxs" | "xs" | "sm" | "lg";
+
+export type ModalFactoryProps = {
+  className?: string | undefined;
+  style?: CSSProperties;
+};
 
 export interface BottomNavigationBar {
   justifyBetween?: boolean | undefined;
