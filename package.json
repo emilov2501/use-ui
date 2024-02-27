@@ -2,12 +2,12 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "scripts": {
-    "build:useui": "nx run useui-ts:build",
-    "dev:www": "nx dev www --skip-nx-cache",
-    "dev:useui": "nx run useui-ts:dev --skip-nx-cache",
+    "build": "lerna run build --scope=useui-ts",
+    "dev": "lerna run dev --scope=www",
     "release": "lerna publish from-package --no-private",
     "version": "lerna version --no-private"
   },
