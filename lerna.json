@@ -3,8 +3,10 @@
   "version": "independent",
   "command": {
     "version": {
-      "allowBranch": "main",
-      "conventionalCommits": true
+      "allowBranch": ["main", "feature/*"],
+      "conventionalBumpPrerelease": true,
+      "conventionalCommits": true,
+      "changelog": true
     }
   },
   "ignoreChanges": ["*.md", "*.test.ts", "*.spec.ts", "*.stories.ts"]
