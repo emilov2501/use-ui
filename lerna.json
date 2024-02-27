@@ -4,7 +4,7 @@
   "command": {
     "version": {
       "allowBranch": ["main", "feature/*"],
-      "conventionalBumpPrerelease": true,
+      "conventionalPrerelease": true,
       "conventionalCommits": true,
       "changelog": true
     }
