@@ -1,10 +1,8 @@
-// Hooks
-export * from "./useButton";
-export * from "./useField";
-export * from "./useMediaQuery";
-export * from "./useModal";
-export * from "./useSwitch";
-export * from "./useToast";
-// Components
-export * from "./AppModal";
-export * from "./AppToaster";
+export * from "./components/Modal";
+export * from "./components/Toaster";
+export * from "./hooks/useButton";
+export * from "./hooks/useField";
+export * from "./hooks/useMediaQuery";
+export * from "./hooks/useModal";
+export * from "./hooks/useSwitch";
+export * from "./hooks/useToast";

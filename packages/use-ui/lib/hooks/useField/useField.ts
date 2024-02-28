@@ -4,7 +4,7 @@ import type {
   FieldMetadata,
   FieldProps,
   FieldPropsOptions,
-} from "../interfaces";
+} from "../../interfaces";
 
 /**
  * The `useField` function in TypeScript creates a controlled input field with debounced value

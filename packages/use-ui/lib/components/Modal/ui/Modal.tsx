@@ -7,9 +7,9 @@ import type {
   ModalProps,
   ModalSize,
   Noop,
-} from "../../interfaces";
-import { modalModel } from "../../useModal/useModal";
+} from "../../../interfaces";
 
+import { modalModel } from "../../../hooks/useModal/useModal";
 import { useCloseModalOnEscape } from "../hooks/useCloseModalOnEnter";
 import style from "../styles/modal.module.css";
 

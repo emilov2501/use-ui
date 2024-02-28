@@ -1,6 +1,6 @@
 import cls from "classnames";
 import { useCallback, useMemo, useState } from "react";
-import { SwitchOptions, SwitchProps } from "../interfaces";
+import { SwitchOptions, SwitchProps } from "../../interfaces";
 
 const useSwitch = (props: SwitchOptions = {}): SwitchProps => {
   const { value, id, className, onToggle } = props;

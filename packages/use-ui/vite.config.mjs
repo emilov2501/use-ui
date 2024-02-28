@@ -4,22 +4,26 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
 import { viteStaticCopy } from "vite-plugin-static-copy";
+import pkg from "./package.json";
+
 const componentFiles = fs
-  .readdirSync("./lib")
-  .filter((file) => file.includes("App"));
+  .readdirSync("./lib/components")
+  .filter((value) => !value.includes("index"));
 
 const hookFiles = fs
-  .readdirSync("./lib")
-  .filter((file) => file.includes("use"));
+  .readdirSync("./lib/hooks")
+  .filter((value) => !value.includes("index"));
 
 const components = componentFiles.reduce((obj, component) => {
-  obj[component.split(".")[0]] = `lib/${component}/index.ts`;
+  obj[
+    `components/${component.split(".")[0]}`
+  ] = `lib/components/${component}/index.ts`;
 
   return obj;
 }, {});
 
 const hooks = hookFiles.reduce((obj, hook) => {
-  obj[hook.split(".")[0]] = `lib/${hook}/index.ts`;
+  obj[`hooks/${hook.split(".")[0]}`] = `lib/hooks/${hook}/index.ts`;
 
   return obj;
 }, {});
@@ -31,7 +35,9 @@ export default defineConfig({
     },
   },
   plugins: [
-    libInjectCss(),
+    libInjectCss({
+      minify: true,
+    }),
     dts({
       entryRoot: "./lib",
       tsconfigPath: "./tsconfig.build.json",
@@ -59,23 +65,27 @@ export default defineConfig({
     }),
   ],
   build: {
-    outDir: "dist",
-    target: "esnext",
     cssCodeSplit: true,
-    cssMinify: true,
     minify: true,
     lib: {
       entry: {
         ...hooks,
         ...components,
       },
+      name: "useui",
       formats: ["es"],
     },
     rollupOptions: {
-      external: ["react", "react/jsx-runtime", "react-dom"],
+      external: Object.keys(pkg.peerDependencies),
       output: {
         entryFileNames: `[name]/index.js`,
         assetFileNames: `[name]/[name].[ext]`,
+        chunkFileNames: (chunk) => {
+          if (chunk.name.includes("use")) {
+            return `hooks/[name]/[name]-[hash].js`;
+          }
+          return chunk.name;
+        },
       },
     },
   },

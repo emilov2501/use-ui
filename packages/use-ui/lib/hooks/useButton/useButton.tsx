@@ -3,7 +3,7 @@ import type {
   ButtonMetadata,
   ButtonProps,
   ButtonPropsOptions,
-} from "../interfaces";
+} from "../../interfaces";
 
 /**
  * The `useButton` function in TypeScript React returns button props and metadata based on the provided

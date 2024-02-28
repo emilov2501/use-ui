@@ -1,5 +1,5 @@
-import { StoreObserver } from "../StoreObserver";
-import { ToastProps, ToastState } from "../interfaces";
+import { StoreObserver } from "../../StoreObserver";
+import { ToastProps, ToastState } from "../../interfaces";
 
 let toastTimeoutId: null | ReturnType<typeof setTimeout>;
 

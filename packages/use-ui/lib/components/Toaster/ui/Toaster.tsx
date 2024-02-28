@@ -3,8 +3,8 @@ import compose from "compose-function";
 import React, { ComponentType, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { CSSTransition } from "react-transition-group";
-import type { ToastFactoryProps } from "../../interfaces";
-import { toastModel, useToastStore } from "../../useToast/useToast";
+import { toastModel, useToastStore } from "../../../hooks/useToast/useToast";
+import type { ToastFactoryProps } from "../../../interfaces";
 import "../styles/animation.css";
 import style from "../styles/toaster.module.css";
 

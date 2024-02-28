@@ -1,8 +1,8 @@
 import React, { createRef, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { ModalFactoryProps } from "../../interfaces";
-import { useModalStore } from "../../useModal/useModal";
+import { useModalStore } from "../../../hooks/useModal/useModal";
+import type { ModalFactoryProps } from "../../../interfaces";
 import "../styles/animation.css";
 import Modal from "./Modal";
 
