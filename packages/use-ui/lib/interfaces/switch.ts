@@ -17,7 +17,7 @@ export interface SwitchOptions {
   className?: string;
   id?: string | undefined;
   value?: boolean | undefined;
-  onChange?: (value: boolean) => void;
+  onToggle?: (value: boolean) => void;
 }
 
 export interface SwitchProps extends SwitchAttributes {

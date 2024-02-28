@@ -1,35 +1,33 @@
 import cls from "classnames";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { SwitchOptions, SwitchProps } from "../interfaces";
 
-type UseSwichHookResult = {
-  inputProps: SwitchProps;
-};
-
-const useSwitch = (props?: SwitchOptions): UseSwichHookResult => {
-  const { value, id, className, onChange } = props || {};
+const useSwitch = (props: SwitchOptions = {}): SwitchProps => {
+  const { value, id, className, onToggle } = props;
   const [isChecked, setIsChecked] = useState<boolean>(value || false);
 
-  const toggleSwitch = useCallback(() => {
+  const toggleSwitch = useCallback((): void => {
     setIsChecked(!isChecked);
-    onChange?.(!isChecked);
+    onToggle?.(!isChecked);
   }, [isChecked]);
 
-  const inputProps: SwitchProps = {
-    id,
-    type: "checkbox",
-    className: cls(className, "Switch__control", {
-      [`Switch__control--checked`]: isChecked,
-    }),
-    role: "switch",
-    checked: isChecked,
-    "aria-checked": isChecked,
-    onChange: toggleSwitch,
-    tabIndex: 0,
-  };
+  const _className = useMemo(
+    (): string =>
+      cls(className, "Switch__control", {
+        [`Switch__control--checked`]: isChecked,
+      }),
+    [isChecked, className]
+  );
 
   return {
-    inputProps,
+    id,
+    type: "checkbox",
+    checked: isChecked,
+    onChange: toggleSwitch,
+    tabIndex: 0,
+    className: _className,
+    role: "switch",
+    "aria-checked": isChecked,
   };
 };
 
