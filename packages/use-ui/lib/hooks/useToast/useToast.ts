@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-import { ToastStore } from "./store";
+import { ToastStore } from "./useToast.store";
 
 const store = new ToastStore({
   show: false,
