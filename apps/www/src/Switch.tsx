@@ -1,16 +1,16 @@
 import { useSwitch } from "useui-ts";
 
 export const Switch = () => {
-  const { inputProps } = useSwitch({
+  const props = useSwitch({
     id: "id",
     name: "form",
-    onChange: (value) => console.log(value),
+    onToggle: (value) => console.log(value),
     className: "myclass",
   });
   return (
     <label htmlFor="id">
-      <input {...inputProps} />
-      daun
+      <input {...props} />
+      swtich
     </label>
   );
 };
