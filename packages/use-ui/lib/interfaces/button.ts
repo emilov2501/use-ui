@@ -1,7 +1,8 @@
 // button.d.ts
 
+import { CommonTypes } from ".";
+
 export type ButtonType = "button" | "reset" | "submit";
-export type ButtonMetadata = Pick<JSX.IntrinsicElements, "button" | "a">;
 
 export interface AnchorOptions {
   href?: string;
@@ -9,17 +10,16 @@ export interface AnchorOptions {
   target?: string;
 }
 
-export interface ButtonPropsOptions extends AnchorOptions {
+export interface ButtonPropsOptions {
   type?: ButtonType;
   disabled?: boolean;
   form?: string;
-  onClick?: React.EventHandler<React.MouseEvent | React.KeyboardEvent>;
   tabIndex?: number;
-  tagName?: keyof ButtonMetadata;
   role?: React.AriaRole | undefined;
+  onClick?: React.EventHandler<React.MouseEvent | React.KeyboardEvent>;
 }
 
-export interface ButtonProps {
+export interface ButtonProps extends CommonTypes.ComponentDefaultAttributes {
   type?: ButtonType | undefined;
   disabled: boolean | undefined;
   form?: string | undefined;
@@ -31,5 +31,4 @@ export interface ButtonProps {
   "aria-disabled"?: true | undefined;
   onClick?: (event: React.MouseEvent | React.KeyboardEvent) => void;
   onKeyDown?: (event: React.KeyboardEvent) => void;
-  className?: string | undefined;
 }

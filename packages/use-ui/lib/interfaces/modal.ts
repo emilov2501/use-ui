@@ -1,14 +1,9 @@
 // modal.d.ts
-import { CSSProperties, ReactNode } from "react";
-import { Noop } from ".";
+import { ReactNode } from "react";
+import { CommonTypes } from ".";
 
 export type ModalId = string;
 export type ModalSize = "xxs" | "xs" | "sm" | "lg";
-
-export type ModalFactoryProps = {
-  className?: string | undefined;
-  style?: CSSProperties;
-};
 
 export interface BottomNavigationBar {
   justifyBetween?: boolean | undefined;
@@ -33,7 +28,7 @@ export interface ModalData {
 export interface ModalEvents {
   onOpen: (id: ModalId, props: ModalProps) => void;
   onClose: (id: ModalId) => void;
-  onClear: Noop;
+  onClear: CommonTypes.Noop;
 }
 
 export type ModalState = Map<string, ModalData>;
