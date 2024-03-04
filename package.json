@@ -6,6 +6,7 @@
     "apps/*"
   ],
   "scripts": {
+    "update:readme": "cp README.md packages/use-ui",
     "build": "lerna run build --scope=useui-ts",
     "dev": "lerna run dev --scope=www",
     "release": "lerna publish from-package --no-private",

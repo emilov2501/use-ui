@@ -11,6 +11,7 @@
 - `useMediaQuery`
 - `useModal`
 - `useToast`
+- `useSwitch`
 
 #### Usage example
 
