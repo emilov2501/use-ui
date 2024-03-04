@@ -1,7 +1,13 @@
+import cls from "classnames";
 import * as React from "react";
-import type { ButtonType, ResultButtonProps } from "../../interfaces";
-
-export interface ButtonPropsOptions {
+import { useMemo } from "react";
+import type {
+  ButtonType,
+  CommonTypes,
+  ResultButtonProps,
+} from "../../interfaces";
+export interface ButtonPropsOptions
+  extends CommonTypes.ComponentDefaultAttributes {
   type?: ButtonType;
   disabled?: boolean;
   form?: string;
@@ -13,12 +19,22 @@ export interface ButtonPropsOptions {
 const useButton = (props: ButtonPropsOptions = {}): ResultButtonProps => {
   let {
     form,
+    className,
+    style,
     tabIndex,
     disabled = undefined,
     role = "button",
     type = "button",
     onClick,
   } = props;
+
+  const _className = useMemo(
+    (): string =>
+      cls(className, "UI_button", {
+        [`UI_button--disabled`]: disabled,
+      }),
+    [disabled, className]
+  );
 
   const handleClick = (event: React.MouseEvent | React.KeyboardEvent) => {
     if (disabled) {
@@ -39,6 +55,8 @@ const useButton = (props: ButtonPropsOptions = {}): ResultButtonProps => {
   return {
     type,
     role,
+    style,
+    className: _className,
     form,
     disabled: disabled || undefined,
     tabIndex: disabled ? undefined : tabIndex || 0,
