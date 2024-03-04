@@ -5,6 +5,7 @@
 **useUI** is a React library offering a suite of components and hooks that simplify app development. Access to components is provided through hooks, enabling the encapsulation of complex logic and state management internally, without dictating their appearance. This approach grants developers the freedom to style, while still providing a robust and flexible functionality for creating unique user interfaces 😎.
 
 ### Available Hooks
+
 - `useButton`
 - `useField`
 - `useMediaQuery`
@@ -12,6 +13,7 @@
 - `useToast`
 
 #### Usage example
+
 ```jsx
 
 import { useModal, useButton, Modal } from 'useui-ts'
@@ -19,7 +21,7 @@ import { useModal, useButton, Modal } from 'useui-ts'
 function Component() {
   const modal = useModal();
 
-  const [btnProps, Button] = useButton({
+  const btnProps = useButton({
     onClick: () =>
       modal.open("first-modal", {
         size: "sm",
@@ -42,7 +44,7 @@ function Component() {
 
  return (
     <div>
-      <Button {...btnProps}>Open Modal</Button>
+      <button {...btnProps}>Open Modal</button>
     </div>
   )
 }
