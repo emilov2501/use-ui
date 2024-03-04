@@ -24,7 +24,7 @@
   },
   "scripts": {
     "build": "rimraf dist && vite build",
-    "test": "jest"
+    "test": "vitest"
   },
   "bugs": {
     "url": "https://github.com/emilov2501/use-ui/issues"
@@ -65,7 +65,8 @@
     "vite": "^5.1.4",
     "vite-plugin-dts": "^3.7.3",
     "vite-plugin-lib-inject-css": "^2.0.0",
-    "vite-plugin-static-copy": "^1.0.1"
+    "vite-plugin-static-copy": "^1.0.1",
+    "vitest": "^1.3.1"
   },
   "peerDependencies": {
     "react": "^18",
