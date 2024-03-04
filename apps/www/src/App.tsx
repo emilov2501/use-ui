@@ -1,5 +1,4 @@
 import { useButton, useField, useModal, useToast } from "useui-ts";
-import { Switch } from "./Switch";
 
 function App() {
   const modal = useModal();
@@ -134,7 +133,7 @@ function App() {
 
   return (
     <>
-      <Switch />
+      <Button {...btnProps}>dsad</Button>
     </>
   );
 }
