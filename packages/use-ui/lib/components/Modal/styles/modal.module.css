@@ -1,3 +1,22 @@
+.modal-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.modal-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 200ms, opacity 200ms;
+}
+.modal-exit {
+  opacity: 1;
+}
+.modal-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: transform 200ms, opacity 200ms;
+}
+
+/* Modal  */
 .container {
   display: flex;
   justify-content: center;

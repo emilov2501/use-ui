@@ -21,5 +21,5 @@ export const useModal = (): UseModalHookResult => ({
   close: modalModel.close,
 });
 
-export const useModalStore = () =>
+export const useModalState = () =>
   useSyncExternalStore(store.subscribe, store.getState);

@@ -1,14 +1,13 @@
 import React, { createRef, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { useModalStore } from "../../../hooks/useModal/useModal";
-import type { ModalFactoryProps } from "../../../interfaces";
-import "../styles/animation.css";
+import { useModalState } from "../../../hooks/useModal/useModal";
+import type { CommonTypes } from "../../../interfaces";
+import styles from "../styles/modal.module.css";
 import Modal from "./Modal";
 
-const ModalFactory = (props?: ModalFactoryProps) => {
-  const state = useModalStore();
-
+const ModalFactory = (props?: CommonTypes.ComponentDefaultAttributes) => {
+  const state = useModalState();
   const modals = useMemo(
     () =>
       [...state.values()].map((item) => ({
@@ -25,7 +24,12 @@ const ModalFactory = (props?: ModalFactoryProps) => {
           key={modal.modalId}
           nodeRef={modal.nodeRef}
           timeout={200}
-          classNames="fade"
+          classNames={{
+            enter: styles.modalEnter,
+            enterActive: styles.modalEnterActive,
+            exit: styles.modalExit,
+            exitActive: styles.modalExitActive,
+          }}
         >
           <Modal
             ref={modal.nodeRef}
