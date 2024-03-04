@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-alpha.2](https://github.com/emilov2501/use-ui/compare/useui-ts@1.1.0-alpha.1...useui-ts@1.1.0-alpha.2) (2024-03-04)
+
+
+### Bug Fixes
+
+* **app:** :fire: update folder structure ([948b6e9](https://github.com/emilov2501/use-ui/commit/948b6e957b468717d3ec7e2a9137549a393b13d4))
+* **useButton:** return props ([ed457b5](https://github.com/emilov2501/use-ui/commit/ed457b5689479b939a7d49dc273cbd933e9d6ff2))
+* **useModal:** fix animation css ([b6eb5a4](https://github.com/emilov2501/use-ui/commit/b6eb5a46ff37317f56a69b05203dac98ec125b73))
+
+
+### Features
+
+* **useButton:** add classnames ([0d9a85d](https://github.com/emilov2501/use-ui/commit/0d9a85d6b69a3ef0e0808e97151ab23040a2e871))
+* **useField:** add classnames ([207d0bd](https://github.com/emilov2501/use-ui/commit/207d0bdafeb2538e134a17068bd2b40d77386a36))
+* **useSwitch:** add classnames, disabled ([b89d13a](https://github.com/emilov2501/use-ui/commit/b89d13aec669e2174a69e210112a54f785fa1e26))
+
+
+
+
+
 # [1.1.0-alpha.1](https://github.com/emilov2501/use-ui/compare/useui-ts@1.1.0-alpha.0...useui-ts@1.1.0-alpha.1) (2024-02-28)
 
 
