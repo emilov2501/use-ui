@@ -10,8 +10,11 @@ type PickCheckboxOptions = Pick<
   "checked" | "onChange" | "id" | "className"
 >;
 
-export type SwitchAttributes = PickCheckboxOptions & PickAriaOptions;
-
-export interface ResultSwitchProps extends SwitchAttributes {
+interface SwitchProps {
   type: "checkbox";
+  disabled?: boolean;
+  name?: string;
 }
+export type ResultSwitchProps = PickCheckboxOptions &
+  SwitchProps &
+  PickAriaOptions;
