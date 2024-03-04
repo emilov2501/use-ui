@@ -1,8 +1,14 @@
 import cls from "classnames";
 import { useCallback, useMemo, useState } from "react";
-import { SwitchOptions, SwitchProps } from "../../interfaces";
+import { CommonTypes, ResultSwitchProps } from "../../interfaces";
 
-const useSwitch = (props: SwitchOptions = {}): SwitchProps => {
+interface SwitchOptions extends CommonTypes.ComponentDefaultAttributes {
+  name?: string | undefined;
+  value?: boolean | undefined;
+  onToggle?: (value: boolean) => void;
+}
+
+const useSwitch = (props: SwitchOptions = {}): ResultSwitchProps => {
   const { value, id, className, onToggle } = props;
   const [isChecked, setIsChecked] = useState<boolean>(value || false);
 

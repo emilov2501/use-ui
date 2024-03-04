@@ -1,5 +1,4 @@
 import { HTMLProps } from "react";
-import { CommonTypes } from ".";
 
 export type PickAriaOptions = Pick<
   HTMLProps<HTMLInputElement>,
@@ -13,12 +12,6 @@ type PickCheckboxOptions = Pick<
 
 export type SwitchAttributes = PickCheckboxOptions & PickAriaOptions;
 
-export interface SwitchOptions extends CommonTypes.ComponentDefaultAttributes {
-  name?: string | undefined;
-  value?: boolean | undefined;
-  onToggle?: (value: boolean) => void;
-}
-
-export interface SwitchProps extends SwitchAttributes {
+export interface ResultSwitchProps extends SwitchAttributes {
   type: "checkbox";
 }

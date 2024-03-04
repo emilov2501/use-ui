@@ -11,14 +11,14 @@ export interface FieldOptions {
   onBlur?: () => void;
 }
 
-const useField = (props?: FieldOptions): ResultFieldProps => {
+const useField = (props: FieldOptions = {}): ResultFieldProps => {
   const {
     value = "",
     name = undefined,
     debounceDelay = 0,
     onChange,
     disabled,
-  } = props || {};
+  } = props;
 
   const [_value, _setValue] = useState<string>(() => value);
   const [_debouncedValue, _setDebouncedValue] = useState<string>(() => value);

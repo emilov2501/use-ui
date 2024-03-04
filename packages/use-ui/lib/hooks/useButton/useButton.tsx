@@ -1,14 +1,16 @@
 import * as React from "react";
-import type { ButtonProps, ButtonPropsOptions } from "../../interfaces";
+import type { ButtonType, ResultButtonProps } from "../../interfaces";
 
-/**
- * The `useButton` function in TypeScript React returns button props and metadata based on the provided
- * options.
- * @param [props] - The `props` parameter in the `useButton` function is an optional object that
- * contains various options for configuring the button component. These options include:
- * @returns The `useButton` function returns an array with two elements:
- */
-const useButton = (props?: ButtonPropsOptions): ButtonProps => {
+export interface ButtonPropsOptions {
+  type?: ButtonType;
+  disabled?: boolean;
+  form?: string;
+  tabIndex?: number;
+  role?: React.AriaRole | undefined;
+  onClick?: React.EventHandler<React.MouseEvent | React.KeyboardEvent>;
+}
+
+const useButton = (props: ButtonPropsOptions = {}): ResultButtonProps => {
   let {
     form,
     tabIndex,
@@ -16,7 +18,7 @@ const useButton = (props?: ButtonPropsOptions): ButtonProps => {
     role = "button",
     type = "button",
     onClick,
-  } = props || {};
+  } = props;
 
   const handleClick = (event: React.MouseEvent | React.KeyboardEvent) => {
     if (disabled) {
