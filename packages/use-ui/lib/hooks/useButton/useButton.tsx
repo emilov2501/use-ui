@@ -1,9 +1,5 @@
 import * as React from "react";
-import type {
-  ButtonMetadata,
-  ButtonProps,
-  ButtonPropsOptions,
-} from "../../interfaces";
+import type { ButtonProps, ButtonPropsOptions } from "../../interfaces";
 
 /**
  * The `useButton` function in TypeScript React returns button props and metadata based on the provided
@@ -12,25 +8,17 @@ import type {
  * contains various options for configuring the button component. These options include:
  * @returns The `useButton` function returns an array with two elements:
  */
-const useButton = (
-  props?: ButtonPropsOptions
-): [ButtonProps, keyof ButtonMetadata] => {
+const useButton = (props?: ButtonPropsOptions): ButtonProps => {
   let {
-    disabled = undefined,
-    href,
-    role = "button",
-    type = "button",
     form,
     tabIndex,
-    tagName = "button",
+    disabled = undefined,
+    role = "button",
+    type = "button",
     onClick,
   } = props || {};
 
   const handleClick = (event: React.MouseEvent | React.KeyboardEvent) => {
-    if (disabled || (tagName === "a" && isTrivialHref(href))) {
-      event.preventDefault();
-    }
-
     if (disabled) {
       event.stopPropagation();
       return;
@@ -46,31 +34,16 @@ const useButton = (
     }
   };
 
-  if (tagName === "a") {
-    href ||= "#";
-    if (disabled) {
-      href = undefined;
-    }
-  }
-
-  return [
-    {
-      type,
-      role,
-      form,
-      disabled: disabled || undefined,
-      href: href,
-      tabIndex: disabled ? undefined : tabIndex || 0,
-      "aria-disabled": !disabled ? undefined : disabled,
-      onClick: handleClick,
-      onKeyDown: handleKeyDown,
-    },
-    tagName,
-  ];
+  return {
+    type,
+    role,
+    form,
+    disabled: disabled || undefined,
+    tabIndex: disabled ? undefined : tabIndex || 0,
+    "aria-disabled": !disabled ? undefined : disabled,
+    onClick: handleClick,
+    onKeyDown: handleKeyDown,
+  };
 };
-
-function isTrivialHref(href?: string) {
-  return !href || href.trim() === "#";
-}
 
 export default useButton;
