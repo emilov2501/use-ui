@@ -1,5 +1,10 @@
-import { ModalEvents, ModalId, ModalProps, ModalState } from "../../interfaces";
 import { StoreObserver } from "../../StoreObserver";
+import {
+  ModalEvents,
+  ModalId,
+  ModalProps,
+  ModalState,
+} from "../types/modal.types";
 
 /**
  * ModalStore is a specialized store observer for managing modal dialog states within an application.
