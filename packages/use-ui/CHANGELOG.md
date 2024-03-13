@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-alpha.3](https://github.com/emilov2501/use-ui/compare/useui-ts@1.1.0-alpha.2...useui-ts@1.1.0-alpha.3) (2024-03-13)
+
+
+### Bug Fixes
+
+* :zap: remove unusable hooks ([4aa15b6](https://github.com/emilov2501/use-ui/commit/4aa15b6932d009985aa2eb6808687f5f67c569ba))
+* fix rollup build ocnfig ([ffe6a6d](https://github.com/emilov2501/use-ui/commit/ffe6a6d21f5652582f4799ef34c403b3dc25335d))
+* fix types import ([f0ad6bb](https://github.com/emilov2501/use-ui/commit/f0ad6bb431f756e059db21801f13ab90316e50b2))
+
+
+### Features
+
+* **tests:** add a tests files ([2463bda](https://github.com/emilov2501/use-ui/commit/2463bdab0035f77e71f256f6094f076541e88344))
+
+
+
+
+
 # [1.1.0-alpha.2](https://github.com/emilov2501/use-ui/compare/useui-ts@1.1.0-alpha.1...useui-ts@1.1.0-alpha.2) (2024-03-04)
 
 
