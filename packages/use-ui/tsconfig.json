@@ -11,5 +11,5 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "lib/index.ts"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }

@@ -1,32 +1,9 @@
-import fs from "fs";
 import { minify } from "terser";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import pkg from "./package.json";
-
-const componentFiles = fs
-  .readdirSync("./lib/components")
-  .filter((value) => !value.includes("index"));
-
-const hookFiles = fs
-  .readdirSync("./lib/hooks")
-  .filter((value) => !value.includes("index"));
-
-const components = componentFiles.reduce((obj, component) => {
-  obj[
-    `components/${component.split(".")[0]}`
-  ] = `lib/components/${component}/index.ts`;
-
-  return obj;
-}, {});
-
-const hooks = hookFiles.reduce((obj, hook) => {
-  obj[`hooks/${hook.split(".")[0]}`] = `lib/hooks/${hook}/index.ts`;
-
-  return obj;
-}, {});
 
 export default defineConfig({
   css: {
@@ -69,8 +46,8 @@ export default defineConfig({
     minify: true,
     lib: {
       entry: {
-        ...hooks,
-        ...components,
+        UIModal: "./lib/UIModal/index.ts",
+        UIToaster: "./lib/UIToaster/index.ts",
       },
       name: "useui",
       formats: ["es"],

@@ -3,10 +3,9 @@ import compose from "compose-function";
 import React, { ComponentType, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { CSSTransition } from "react-transition-group";
-import { toastModel, useToastStore } from "../../../hooks/useToast/useToast";
-import type { ToastFactoryProps } from "../../../interfaces";
-import "../styles/animation.css";
-import style from "../styles/toaster.module.css";
+import { toastModel, useToastStore } from "../hooks/useToast";
+import type { ToastFactoryProps } from "../types/toast.types";
+import style from "./toaster.module.css";
 
 const Toaster = (props?: ToastFactoryProps) => {
   const state = useToastStore();
@@ -55,7 +54,12 @@ const WithCSSTransition = (Component: ComponentType<ToastFactoryProps>) => {
         in={state.show}
         nodeRef={nodeRef}
         timeout={300}
-        classNames="slide"
+        classNames={{
+          enter: style.slideEnter,
+          enterActive: style.slideEnterActive,
+          exit: style.slideExit,
+          exitActive: style.slideExitActive,
+        }}
         unmountOnExit
       >
         <div

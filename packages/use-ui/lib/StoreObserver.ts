@@ -1,5 +1,5 @@
 import clone from "lodash.clone";
-import { Noop } from "./interfaces";
+import { CommonTypes } from "./interfaces";
 
 type SetStateFunction<State> = (prevState: State) => State;
 
@@ -15,7 +15,7 @@ export class StoreObserver<State> {
    * @private
    * @type {Set<Noop>}
    */
-  private subscribers: Set<Noop>;
+  private subscribers: Set<CommonTypes.Noop>;
 
   /**
    * The current state of the store.
@@ -41,7 +41,7 @@ export class StoreObserver<State> {
    * @param {Noop} callback - The callback function to be called on state changes.
    * @returns {Function} An unsubscribe function that removes the callback from the subscribers.
    */
-  public subscribe = (callback: Noop) => {
+  public subscribe = (callback: CommonTypes.Noop) => {
     this.subscribers.add(callback);
     return () => {
       this.subscribers.delete(callback);

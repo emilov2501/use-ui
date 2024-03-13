@@ -2,18 +2,17 @@ import cls from "classnames";
 import React, { forwardRef } from "react";
 import type {
   BottomNavigationBar,
-  ModalFactoryProps,
   ModalId,
   ModalProps,
   ModalSize,
-  Noop,
-} from "../../../interfaces";
+} from "../types/modal.types";
 
-import { modalModel } from "../../../hooks/useModal/useModal";
+import { CommonTypes } from "../../types";
 import { useCloseModalOnEscape } from "../hooks/useCloseModalOnEnter";
-import style from "../styles/modal.module.css";
+import { modalModel } from "../hooks/useModal";
+import style from "./modal.module.css";
 
-interface Props extends ModalFactoryProps, ModalProps {
+interface Props extends CommonTypes.ComponentDefaultAttributes, ModalProps {
   size?: ModalSize;
   id: ModalId;
 }
@@ -65,7 +64,7 @@ const Modal = forwardRef<HTMLDivElement, Props>(
 
 function buildHeader(
   title: string,
-  handleClose: Noop,
+  handleClose: CommonTypes.Noop,
   showXMarkIcon: boolean = true
 ) {
   return (

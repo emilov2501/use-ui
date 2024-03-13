@@ -1,6 +1,6 @@
 // modal.d.ts
 import { ReactNode } from "react";
-import { CommonTypes } from ".";
+import { CommonTypes } from "../../types";
 
 export type ModalId = string;
 export type ModalSize = "xxs" | "xs" | "sm" | "lg";

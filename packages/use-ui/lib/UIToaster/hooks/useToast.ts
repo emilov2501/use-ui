@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from "react";
-import { ToastStore } from "./useToast.store";
+import { ToastState } from "../types/toast.types";
+import { ToastStore } from "./useToastStore";
 
 const store = new ToastStore({
   show: false,
@@ -12,7 +13,7 @@ export const toastModel = {
   toast: store.toast,
 };
 
-export const useToastStore = () =>
+export const useToastStore = (): ToastState =>
   useSyncExternalStore(store.subscribe, store.getState);
 
-export const useToast = () => toastModel.toast;
+export const useToast = (): typeof toastModel.toast => toastModel.toast;

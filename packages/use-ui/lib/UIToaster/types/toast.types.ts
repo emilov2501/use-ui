@@ -1,5 +1,5 @@
 // toast.d.ts
-import { CommonTypes } from ".";
+import { CommonTypes } from "../../types";
 
 export interface ToastFactoryProps
   extends CommonTypes.ComponentDefaultAttributes {

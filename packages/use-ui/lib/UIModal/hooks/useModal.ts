@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-import { ModalStore } from "./useModal.store";
+import { ModalStore } from "./useModalStore";
 
 const store = new ModalStore(new Map());
 

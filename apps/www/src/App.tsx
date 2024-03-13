@@ -1,24 +1,26 @@
-import { useButton, useField, useModal, useSwitch } from "useui-ts";
+import { useModal, useToast } from "useui-ts";
 
 function App() {
   const modal = useModal();
-  const { debouncedValue, ...fieldProps } = useField({
-    debounceDelay: 500,
-  });
-  const switchProps = useSwitch();
-  const btnProps = useButton({
-    onClick: () =>
-      modal.open("hello", {
-        title: "modal",
-      }),
-  });
+  const toast = useToast();
 
   return (
     <>
-      <input {...switchProps} />
-      <input {...fieldProps} />
-      {debouncedValue}
-      <button {...btnProps}>Open modal</button>
+      <button
+        onClick={() =>
+          modal.open("hello", {
+            bottomNavigationBar: {
+              items: [<button>daun</button>],
+            },
+          })
+        }
+      >
+        Open modal
+      </button>
+
+      <button onClick={() => toast({ title: "helo", variant: "success" })}>
+        toast
+      </button>
     </>
   );
 }
