@@ -1,7 +1,7 @@
 import React, { createRef, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import type { CommonTypes } from "../../../types/types";
+import type { CommonTypes } from "../../types";
 import { useModalState } from "../hooks/useModal";
 import Modal from "./Modal";
 import styles from "./modal.module.css";

@@ -3,11 +3,11 @@ import compose from "compose-function";
 import React, { ComponentType, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { CSSTransition } from "react-transition-group";
+import type { Toaster as ToasterType } from "../../types";
 import { toastModel, useToastStore } from "../hooks/useToast";
-import type { ToastFactoryProps } from "../types/toast.types";
 import style from "./toaster.module.css";
 
-const Toaster = (props?: ToastFactoryProps) => {
+const Toaster = (props?: ToasterType.ToastFactoryProps) => {
   const state = useToastStore();
 
   const {
@@ -38,8 +38,10 @@ const Toaster = (props?: ToastFactoryProps) => {
   );
 };
 
-const WithCSSTransition = (Component: ComponentType<ToastFactoryProps>) => {
-  const ToastTranstition = (hocProps: ToastFactoryProps) => {
+const WithCSSTransition = (
+  Component: ComponentType<ToasterType.ToastFactoryProps>
+) => {
+  const ToastTranstition = (hocProps: ToasterType.ToastFactoryProps) => {
     const state = useToastStore();
     const nodeRef = React.useRef(null);
 

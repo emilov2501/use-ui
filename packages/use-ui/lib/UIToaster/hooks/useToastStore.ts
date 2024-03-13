@@ -1,5 +1,5 @@
-import { StoreObserver } from "../../../services/StoreObserver";
-import { ToastProps, ToastState } from "../types/toast.types";
+import { StoreObserver } from "../../StoreObserver";
+import { Toaster } from "../../types";
 
 let toastTimeoutId: null | ReturnType<typeof setTimeout>;
 
@@ -9,13 +9,13 @@ let toastTimeoutId: null | ReturnType<typeof setTimeout>;
  *
  * @extends StoreObserver<ToastState>
  */
-export class ToastStore extends StoreObserver<ToastState> {
+export class ToastStore extends StoreObserver<Toaster.ToastState> {
   /**
    * Initializes a new instance of the ToastStore with an initial state.
    *
    * @param {ToastState} initialState - The initial state of the toast notifications.
    */
-  constructor(initialState: ToastState) {
+  constructor(initialState: Toaster.ToastState) {
     super(initialState);
   }
 
@@ -56,7 +56,7 @@ export class ToastStore extends StoreObserver<ToastState> {
    *
    * @param {props} ToastProps - The properties of the toast notification to display.
    */
-  private onUpdateProps = (props: ToastProps): void => {
+  private onUpdateProps = (props: Toaster.ToastProps): void => {
     this.setState((prev) => ({
       ...prev,
       props,
@@ -69,7 +69,7 @@ export class ToastStore extends StoreObserver<ToastState> {
    *
    * @param {ToastProps} props - The properties of the toast notification to display.
    */
-  public toast = (props: ToastProps): void => {
+  public toast = (props: Toaster.ToastProps): void => {
     const state = this.getState();
     if (toastTimeoutId !== null && state.timeout) {
       clearTimeout(toastTimeoutId);
