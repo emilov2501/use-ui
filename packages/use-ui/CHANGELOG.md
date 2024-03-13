@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/emilov2501/use-ui/compare/useui-ts@1.0.1...useui-ts@1.1.1) (2024-03-13)
+
+**Note:** Version bump only for package useui-ts
+
+
+
+
+
 ## [1.0.1](https://github.com/emilov2501/use-ui/compare/useui-ts@1.1.0-alpha.5...useui-ts@1.0.1) (2024-03-13)
 
 **Note:** Version bump only for package useui-ts
