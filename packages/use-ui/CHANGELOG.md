@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-alpha.5](https://github.com/emilov2501/use-ui/compare/useui-ts@1.1.0-alpha.4...useui-ts@1.1.0-alpha.5) (2024-03-13)
+
+
+### Bug Fixes
+
+* **types:** fix import types ([bcbe2a5](https://github.com/emilov2501/use-ui/commit/bcbe2a58bbd2933e9988327d278184c1486023cc))
+
+
+
+
+
 # [1.1.0-alpha.4](https://github.com/emilov2501/use-ui/compare/useui-ts@1.1.0-alpha.3...useui-ts@1.1.0-alpha.4) (2024-03-13)
 
 **Note:** Version bump only for package useui-ts
