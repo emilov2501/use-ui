@@ -1,4 +1,4 @@
-import { StoreObserver } from "../../StoreObserver";
+import { StoreObserver } from "../../../services/StoreObserver";
 import { ToastProps, ToastState } from "../types/toast.types";
 
 let toastTimeoutId: null | ReturnType<typeof setTimeout>;

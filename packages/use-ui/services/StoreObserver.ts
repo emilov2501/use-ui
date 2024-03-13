@@ -1,5 +1,5 @@
 import clone from "lodash.clone";
-import { CommonTypes } from "./types";
+import { CommonTypes } from "../types/types";
 
 type SetStateFunction<State> = (prevState: State) => State;
 

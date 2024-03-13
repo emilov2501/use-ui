@@ -1,4 +1,4 @@
-import { StoreObserver } from "../../StoreObserver";
+import { StoreObserver } from "../../../services/StoreObserver";
 import {
   ModalEvents,
   ModalId,

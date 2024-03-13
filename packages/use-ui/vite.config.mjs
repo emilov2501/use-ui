@@ -29,14 +29,10 @@ export default defineConfig({
           transform: (content) => content.toString().replace(/.tsx/g, ""),
         },
         {
-          src: "lib/index.js",
+          src: "index.js",
           dest: "",
           rename: "index.d.ts",
           transform: (content) => content.toString().replace(/.tsx/g, ""),
-        },
-        {
-          src: "assets/styles.css",
-          dest: "",
         },
       ],
     }),
@@ -57,12 +53,7 @@ export default defineConfig({
       output: {
         entryFileNames: `[name]/index.js`,
         assetFileNames: `[name]/[name].[ext]`,
-        chunkFileNames: (chunk) => {
-          if (chunk.name.includes("use")) {
-            return `hooks/[name]/[name]-[hash].js`;
-          }
-          return chunk.name;
-        },
+        // chunkFileNames: (chunk) => chunk.name,
       },
     },
   },

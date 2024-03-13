@@ -7,7 +7,7 @@ import type {
   ModalSize,
 } from "../types/modal.types";
 
-import { CommonTypes } from "../../types";
+import { CommonTypes } from "../../../types/types";
 import { useCloseModalOnEscape } from "../hooks/useCloseModalOnEnter";
 import { modalModel } from "../hooks/useModal";
 import style from "./modal.module.css";
