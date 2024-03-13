@@ -1,18 +1,13 @@
 import { StoreObserver } from "../../StoreObserver";
-import {
-  ModalEvents,
-  ModalId,
-  ModalProps,
-  ModalState,
-} from "../types/modal.types";
+import { Modal as ModalType } from "../../types";
 
 /**
  * ModalStore is a specialized store observer for managing modal dialog states within an application.
  * It extends `StoreObserver` to handle state related to modal dialogs and implements `ModalEvents` for event handling.
  */
 export class ModalStore
-  extends StoreObserver<ModalState>
-  implements ModalEvents
+  extends StoreObserver<ModalType.ModalState>
+  implements ModalType.ModalEvents
 {
   /**
    * Initializes a new instance of the ModalStore with an optional initial state.
@@ -31,7 +26,10 @@ export class ModalStore
    * @param {ModalId} modalId - The unique identifier for the modal dialog to be opened.
    * @param {ModalProps} modalProps - The properties of the modal dialog to be opened.
    */
-  public onOpen = (modalId: ModalId, modalProps: ModalProps) => {
+  public onOpen = (
+    modalId: ModalType.ModalId,
+    modalProps: ModalType.ModalProps
+  ) => {
     const copy = this.getCopy();
     const updatedState = copy.set(modalId, { modalId, modalProps });
 
@@ -45,7 +43,7 @@ export class ModalStore
    * @param {ModalId} modalId - The unique identifier for the modal dialog to be closed.
    * @throws {Error} If the modal ID does not exist in the state.
    */
-  public onClose = (modalId: ModalId) => {
+  public onClose = (modalId: ModalType.ModalId) => {
     const modals = this.getState();
 
     if (!modals.has(modalId)) {
