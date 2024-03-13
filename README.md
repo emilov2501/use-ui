@@ -6,12 +6,8 @@
 
 ### Available Hooks
 
-- `useButton`
-- `useField`
-- `useMediaQuery`
 - `useModal`
 - `useToast`
-- `useSwitch`
 
 #### Usage example
 
@@ -22,9 +18,9 @@ import { useModal, useButton, Modal } from 'useui-ts'
 function Component() {
   const modal = useModal();
 
-  const btnProps = useButton({
-    onClick: () =>
-      modal.open("first-modal", {
+  return (
+    <div>
+      <button onClick={() => modal.open("first-modal", {
         size: "sm",
         title: "Are you sure?",
         content: (
@@ -40,12 +36,7 @@ function Component() {
             <CancelButton onClick={() => modal.close("first-modal")}>Cancel</button>,
           ],
         },
-      }),
-  });
-
- return (
-    <div>
-      <button {...btnProps}>Open Modal</button>
+      })}>Open Modal</button>
     </div>
   )
 }
